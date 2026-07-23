@@ -1,0 +1,195 @@
+{
+  "id": "019f842f-5008-71dc-a17e-75c1d71147ac",
+  "name": "Match Home UI to Figma",
+  "description": "Update the Home page sections (Hero, Founder, Our Process) to use the user-provided Figma images and adjust the Our Process layout so text stays left and cards shift right to match the Figma design.",
+  "status": "paused",
+  "worktree": {
+    "path": "/mnt/c/Users/User/Desktop/Projects/Lorenzo/yby"
+  },
+  "scoping": {
+    "goal": {
+      "answer": "Update the Home page sections (Hero, Founder, Our Process) to use the user-provided Figma images and adjust the Our Process layout so text stays left and cards shift right to match the Figma design.",
+      "confirmedAt": "2026-07-21T10:18:53.294Z"
+    },
+    "criteria": {
+      "answer": "HeroSection uses /assets/images/hero-bg.png from the provided Figma asset\nFounderSection uses /assets/images/founder.jpg from the provided Figma asset\nHowItWorksSection uses /assets/images/process-bg.jpg from the provided Figma asset\nHowItWorksSection layout places text on the left and cards slightly to the right, matching the Figma proportions\nNo placeholder or TODO content remains in touched files\nDev server builds and the Home page renders without errors",
+      "confirmedAt": "2026-07-21T10:18:53.294Z"
+    },
+    "constraints": {
+      "answer": "Use the exact user-provided image files; do not recreate or redesign content, Keep existing cards/content in Our Process; only resize/reposition, Do not add new dependencies",
+      "confirmedAt": "2026-07-21T10:18:53.294Z"
+    },
+    "phases": {
+      "answer": "Asset preparation, Component updates, Verification",
+      "confirmedAt": "2026-07-21T10:18:53.294Z"
+    },
+    "assumptions": {
+      "answer": "User-provided images are at C:\\Users\\User\\Desktop\\Projects\\Lorenzo\\Figma UI\\Web Ui\\Home\\images inside component; The existing Home section files are HeroSection.tsx, FounderSection.tsx, and HowItWorksSection.tsx; Standard HTML <img> tags are acceptable per the implementation guide",
+      "confirmedAt": "2026-07-21T10:18:53.294Z"
+    }
+  },
+  "phases": [
+    {
+      "id": "phase-1",
+      "index": 1,
+      "name": "Asset preparation",
+      "goal": "Copy the provided Figma images into the public assets directory with consistent filenames",
+      "description": "",
+      "parallel": false,
+      "status": "completed",
+      "steps": [
+        {
+          "id": "step-1",
+          "index": 1,
+          "description": "Copy Hero Background.png to public/assets/images/hero-bg.png",
+          "status": "verified",
+          "verification": {
+            "command": "test -f /mnt/c/Users/User/Desktop/Projects/Lorenzo/yby/public/assets/images/hero-bg.png",
+            "retries": 2,
+            "retryDelayMs": 1000
+          },
+          "parallel": false,
+          "startedAt": "2026-07-21T10:19:37.405Z",
+          "completedAt": "2026-07-21T10:23:45.446Z",
+          "result": {
+            "success": true,
+            "exitCode": 0,
+            "stdout": "",
+            "stderr": "",
+            "completedAt": "2026-07-21T10:23:45.446Z"
+          }
+        },
+        {
+          "id": "step-2",
+          "index": 2,
+          "description": "Copy founder.jpg to public/assets/images/founder.jpg",
+          "status": "verified",
+          "verification": {
+            "command": "test -f /mnt/c/Users/User/Desktop/Projects/Lorenzo/yby/public/assets/images/founder.jpg",
+            "retries": 2,
+            "retryDelayMs": 1000
+          },
+          "parallel": false,
+          "startedAt": "2026-07-21T10:23:51.349Z",
+          "completedAt": "2026-07-21T10:24:17.891Z",
+          "result": {
+            "success": true,
+            "exitCode": 0,
+            "stdout": "test -f /mnt/c/Users/User/Desktop/Projects/Lorenzo/yby/public/assets/images/founder.jpg",
+            "stderr": "",
+            "completedAt": "2026-07-21T10:24:17.891Z"
+          }
+        },
+        {
+          "id": "step-3",
+          "index": 3,
+          "description": "Copy ourprocess background.jpg to public/assets/images/process-bg.jpg",
+          "status": "pending",
+          "verification": {
+            "command": "test -f /mnt/c/Users/User/Desktop/Projects/Lorenzo/yby/public/assets/images/process-bg.jpg",
+            "retries": 2,
+            "retryDelayMs": 1000
+          },
+          "parallel": false
+        }
+      ],
+      "startedAt": "2026-07-21T10:19:34.619Z",
+      "completedAt": "2026-07-21T10:24:28.414Z",
+      "summary": "All 3 Figma images copied to public/assets/images/: hero-bg.png (2.1M), founder.jpg (52K), process-bg.jpg (2.8M).",
+      "grade": {
+        "grade": "A",
+        "rationale": "All gates pass; project checks validate.",
+        "gradedAt": "2026-07-21T10:24:28.393Z"
+      }
+    },
+    {
+      "id": "phase-2",
+      "index": 2,
+      "name": "Component updates",
+      "goal": "Update the three Home sections to reference the local images and adjust Our Process layout",
+      "description": "",
+      "parallel": false,
+      "status": "planned",
+      "steps": [
+        {
+          "id": "step-1",
+          "index": 1,
+          "description": "Update HeroSection.tsx to use /assets/images/hero-bg.png and adjust overlay/positioning as needed to match Figma",
+          "status": "pending",
+          "verification": {
+            "command": "grep -q '/assets/images/hero-bg.png' /mnt/c/Users/User/Desktop/Projects/Lorenzo/yby/components/sections/home/HeroSection.tsx",
+            "retries": 2,
+            "retryDelayMs": 1000
+          },
+          "parallel": false
+        },
+        {
+          "id": "step-2",
+          "index": 2,
+          "description": "Update FounderSection.tsx to use /assets/images/founder.jpg and adjust framing to match Figma",
+          "status": "pending",
+          "verification": {
+            "command": "grep -q '/assets/images/founder.jpg' /mnt/c/Users/User/Desktop/Projects/Lorenzo/yby/components/sections/home/FounderSection.tsx",
+            "retries": 2,
+            "retryDelayMs": 1000
+          },
+          "parallel": false
+        },
+        {
+          "id": "step-3",
+          "index": 3,
+          "description": "Update HowItWorksSection.tsx to use /assets/images/process-bg.jpg, keep text left, and shift cards right to match Figma",
+          "status": "pending",
+          "verification": {
+            "command": "grep -q '/assets/images/process-bg.jpg' /mnt/c/Users/User/Desktop/Projects/Lorenzo/yby/components/sections/home/HowItWorksSection.tsx",
+            "retries": 2,
+            "retryDelayMs": 1000
+          },
+          "parallel": false
+        }
+      ]
+    },
+    {
+      "id": "phase-3",
+      "index": 3,
+      "name": "Verification",
+      "goal": "Confirm the site builds and renders without errors",
+      "description": "",
+      "parallel": false,
+      "status": "planned",
+      "steps": [
+        {
+          "id": "step-1",
+          "index": 1,
+          "description": "Run Next.js build to check for compile errors",
+          "status": "pending",
+          "verification": {
+            "command": "cd /mnt/c/Users/User/Desktop/Projects/Lorenzo/yby && pnpm build 2>&1 | tail -30",
+            "retries": 2,
+            "retryDelayMs": 1000
+          },
+          "parallel": false
+        }
+      ]
+    }
+  ],
+  "decisions": [],
+  "memories": [],
+  "createdAt": "2026-07-21T10:18:41.032Z",
+  "updatedAt": "2026-07-21T10:28:36.912Z",
+  "goal": "Update the Home page sections (Hero, Founder, Our Process) to use the user-provided Figma images and adjust the Our Process layout so text stays left and cards shift right to match the Figma design.",
+  "successCriteria": [
+    "HeroSection uses /assets/images/hero-bg.png from the provided Figma asset",
+    "FounderSection uses /assets/images/founder.jpg from the provided Figma asset",
+    "HowItWorksSection uses /assets/images/process-bg.jpg from the provided Figma asset",
+    "HowItWorksSection layout places text on the left and cards slightly to the right, matching the Figma proportions",
+    "No placeholder or TODO content remains in touched files",
+    "Dev server builds and the Home page renders without errors"
+  ],
+  "constraints": [
+    "Use the exact user-provided image files; do not recreate or redesign content",
+    "Keep existing cards/content in Our Process; only resize/reposition",
+    "Do not add new dependencies"
+  ],
+  "lastActiveAt": "2026-07-21T10:19:34.619Z"
+}

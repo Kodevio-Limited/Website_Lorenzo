@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "fermentId": "019f842f-5008-71dc-a17e-75c1d71147ac",
+  "phaseId": "phase-1",
+  "phaseName": "Asset preparation",
+  "attempt": 1,
+  "timestamp": "2026-07-21T10:24:28.389Z",
+  "goal": "Copy the provided Figma images into the public assets directory with consistent filenames",
+  "summary": "All 3 Figma images copied to public/assets/images/: hero-bg.png (2.1M), founder.jpg (52K), process-bg.jpg (2.8M).",
+  "stepSummaries": "  1. Copy Hero Background.png to public/assets/images/hero-bg.png [verified]\n  2. Copy founder.jpg to public/assets/images/founder.jpg [verified]\n  3. Copy ourprocess background.jpg to public/assets/images/process-bg.jpg [pending]",
+  "diffAvailable": false,
+  "flags": [],
+  "derivedGrade": "A",
+  "reviewerRationale": "All gates pass; project checks validate.",
+  "gateVerdicts": [
+    {
+      "id": "F1",
+      "verdict": "pass",
+      "rationale": "File existence tests confirmed each image was copied correctly",
+      "evidence": "ls -lh + test -f for each"
+    },
+    {
+      "id": "F2",
+      "verdict": "pass",
+      "rationale": "Phase goal met: all 3 Figma images are in public/assets/images",
+      "evidence": "public/assets/images/hero-bg.png, founder.jpg, process-bg.jpg all exist"
+    },
+    {
+      "id": "F3",
+      "verdict": "pass",
+      "rationale": "Nothing deferred; all images copied",
+      "evidence": "n/a"
+    }
+  ],
+  "projectChecks": {
+    "discovered": true,
+    "anyFailed": false,
+    "commands": [
+      {
+        "kind": "lint",
+        "command": "npm run lint",
+        "exitCode": 0,
+        "durationMs": 1,
+        "timedOut": false
+      }
+    ]
+  }
+}
