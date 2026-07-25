@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "motion/react";
 
 const parishes = [
   { name: "Kingston", county: "SURREY COUNTY" },
@@ -17,9 +20,16 @@ const parishes = [
   { name: "Hanover", county: "Cornwall County" },
 ];
 
-function ParishCard({ name, county }: { name: string; county: string }) {
+function ParishCard({ name, county, i }: { name: string; county: string; i: number }) {
   return (
-    <div className="w-80 h-28 bg-stone-900 rounded-sm overflow-hidden relative">
+    <motion.div
+      initial={{ opacity: 0, y: 30, scale: 0.9 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ type: "spring", stiffness: 60, damping: 14, delay: i * 0.06 }}
+      whileHover={{ y: -4, scale: 1.02 }}
+      className="w-80 h-28 bg-stone-900 rounded-sm overflow-hidden relative"
+    >
       <div className="absolute left-4 top-4 flex items-center gap-8">
         <div className="w-16 h-20 bg-stone-500 rounded-[3px] relative overflow-hidden">
           <div className="size-7 left-[19px] top-[20px] absolute overflow-hidden">
@@ -31,7 +41,7 @@ function ParishCard({ name, county }: { name: string; county: string }) {
           <div className="self-stretch text-neutral-400 text-base font-medium leading-6">{county}</div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -53,18 +63,18 @@ export function ParishesListSection() {
 
           <div className="self-stretch flex flex-col items-start gap-11">
             <div className="self-stretch flex items-center gap-11">
-              {row1.map((p) => (
-                <ParishCard key={p.name} name={p.name} county={p.county} />
+              {row1.map((p, idx) => (
+                <ParishCard key={p.name} name={p.name} county={p.county} i={idx} />
               ))}
             </div>
             <div className="self-stretch flex items-center gap-11">
-              {row2.map((p) => (
-                <ParishCard key={p.name} name={p.name} county={p.county} />
+              {row2.map((p, idx) => (
+                <ParishCard key={p.name} name={p.name} county={p.county} i={5 + idx} />
               ))}
             </div>
             <div className="self-stretch flex items-center gap-11">
-              {row3.map((p) => (
-                <ParishCard key={p.name} name={p.name} county={p.county} />
+              {row3.map((p, idx) => (
+                <ParishCard key={p.name} name={p.name} county={p.county} i={10 + idx} />
               ))}
             </div>
           </div>

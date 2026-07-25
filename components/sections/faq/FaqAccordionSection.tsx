@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { motion, AnimatePresence } from "motion/react";
 
 const faqs = [
   {
@@ -39,14 +40,18 @@ export function FaqAccordionSection() {
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
               return (
-                <div
+                <motion.div
                   key={faq.number}
-                  className={`self-stretch bg-stone-900 rounded-2xl overflow-hidden transition-all duration-300 ${
-                    isOpen ? 'h-auto' : 'h-28'
-                  }`}
+                  initial={{ opacity: 0, y: 20, scale: 0.97 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  className="self-stretch bg-stone-900 rounded-2xl overflow-hidden"
                 >
-                  <button
+                  <motion.button
                     onClick={() => toggle(index)}
+                    whileHover={{ scale: 1.005 }}
+                    whileTap={{ scale: 0.995 }}
                     className="w-full h-28 flex items-center justify-between px-[96px] text-left focus:outline-none"
                   >
                     <div className="flex items-center gap-6">
@@ -61,15 +66,26 @@ export function FaqAccordionSection() {
                         }`}
                       />
                     </div>
-                  </button>
-                  {isOpen && (
-                    <div className="px-[108px] pb-10">
-                      <div className="text-gray-200 text-3xl font-normal leading-10">
-                        {faq.answer}
-                      </div>
-                    </div>
-                  )}
-                </div>
+                  </motion.button>
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-[108px] pb-10">
+                          <div className="text-gray-200 text-3xl font-normal leading-10">
+                            {faq.answer}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
               );
             })}
           </div>

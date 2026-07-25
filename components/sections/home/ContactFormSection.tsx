@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from "motion/react";
 
 export function ContactFormSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -16,11 +17,33 @@ export function ContactFormSection() {
         <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center gap-8 min-h-[calc(100vh-8rem)] justify-center">
 
         <div className="w-full flex flex-col items-center gap-5">
-          <span className="text-amber-200 text-2xl font-normal leading-8 text-center">Start Verification</span>
-          <h2 className="text-white text-4xl sm:text-5xl font-normal leading-tight sm:leading-[63px] text-center">Request Consultation &amp; Quote</h2>
-          <p className="w-full max-w-[763px] text-neutral-400 text-xl sm:text-2xl font-normal leading-8 text-center">
+          <motion.span
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-amber-200 text-2xl font-normal leading-8 text-center"
+          >
+            Start Verification
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-white text-4xl sm:text-5xl font-normal leading-tight sm:leading-[63px] text-center"
+          >
+            Request Consultation &amp; Quote
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-[763px] text-neutral-400 text-xl sm:text-2xl font-normal leading-8 text-center"
+          >
             Provide basic detail, and an on-site asset stewardship coordinator will connect shortly.
-          </p>
+          </motion.p>
         </div>
 
         {submitted ? (
@@ -36,7 +59,14 @@ export function ContactFormSection() {
             </div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="w-full max-w-[900px] bg-stone-900 rounded-sm overflow-hidden">
+          <motion.form
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, y: 40, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-[900px] bg-stone-900 rounded-sm overflow-hidden"
+          >
             <div className="px-6 md:px-10 pt-10 lg:pt-12 pb-10 lg:pb-12 flex flex-col gap-6 lg:gap-8">
 
               <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
@@ -124,15 +154,17 @@ export function ContactFormSection() {
                 </div>
               </div>
 
-              <button
+              <motion.button
                 type="submit"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className="w-full lg:w-[864px] py-5 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm text-stone-900 text-lg lg:text-2xl font-medium leading-7 lg:leading-8"
                 style={{ fontFamily: "'Helvetica Neue', sans-serif" }}
               >
                 SUBMIT FORMAL STEWARDSHIP REQUEST
-              </button>
+              </motion.button>
             </div>
-          </form>
+          </motion.form>
         )}
 
       </div>

@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import { Button } from '@/components/shared/Button';
 
 export function AboutHeroSection() {
@@ -6,7 +9,13 @@ export function AboutHeroSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Founder portrait */}
-          <div className="relative max-w-sm mx-auto lg:mx-0">
+          <motion.div
+            initial={{ opacity: 0, x: -50, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="relative max-w-sm mx-auto lg:mx-0"
+          >
             <div className="rounded-2xl overflow-hidden border border-[#2A2B26]">
               <img
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80"
@@ -18,10 +27,15 @@ export function AboutHeroSection() {
                 <p className="text-[#D1A736] text-sm">Founder & Managing Director</p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Headline + signature */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 50, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          >
             <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-3">
               Local Eyes.<br />
               Trusted Hands.
@@ -39,11 +53,17 @@ export function AboutHeroSection() {
             <p className="font-serif italic text-[#D1A736] text-2xl mb-8">
               Lorenzo Andrew Campbell
             </p>
-            <div className="flex gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="flex gap-4"
+            >
               <Button href="/contact" variant="gold" size="md">Request Service</Button>
               <Button href="/sample-reports" variant="outline" size="md">Sample Report</Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import Link from 'next/link';
 
 const reports = [
@@ -30,16 +33,46 @@ export function DocumentBankSection() {
       <div className="section-inner py-16 lg:py-20">
         <div className="w-full max-w-[1755px] mx-auto flex flex-col items-center gap-16">
           <div className="w-full max-w-[1378px] flex flex-col items-center gap-5">
-            <div className="text-center text-amber-200 text-2xl font-normal leading-8">INTERACTIVE DOCUMENT BANK</div>
-            <div className="text-center text-white text-5xl font-normal leading-[63px]">Select a Sample Report</div>
-            <div className="w-full max-w-[992px] text-center text-neutral-400 text-2xl font-normal leading-8">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="text-center text-amber-200 text-2xl font-normal leading-8"
+            >
+              INTERACTIVE DOCUMENT BANK
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-center text-white text-5xl font-normal leading-[63px]"
+            >
+              Select a Sample Report
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full max-w-[992px] text-center text-neutral-400 text-2xl font-normal leading-8"
+            >
               Click any document thumbnail card below to instantly populate the primary viewer with its tailored specifications and layout pages.
-            </div>
+            </motion.div>
           </div>
 
           <div className="self-stretch flex justify-start items-center gap-14">
             {reports.map((r, i) => (
-              <div key={i} className="w-[549px] bg-stone-900 rounded-[10px] overflow-hidden group">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40, scale: 0.93 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ type: "spring", stiffness: 60, damping: 14, delay: i * 0.15 }}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="w-[549px] bg-stone-900 rounded-[10px] overflow-hidden group"
+              >
                 <div className="p-[11px]">
                   <div className="h-80 bg-white rounded-[5px] relative overflow-hidden">
                     {i === 0 && (
@@ -128,13 +161,15 @@ export function DocumentBankSection() {
                     )}
                     <div className="absolute inset-0 bg-black/50 rounded-[5px] flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <Link
-                        href="/contact"
+                        href="#interactive-verification-desk"
                         className="px-24 py-4 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm text-stone-900 text-xl font-medium leading-7 hover:opacity-90 transition-all"
                       >
                         VIEW SAMPLE
                       </Link>
                       <Link
-                        href="/contact"
+                        href="/assets/sample-report.pdf"
+                        target="_blank"
+                        download
                         className="px-3.5 py-4 bg-white/50 rounded-sm outline outline-1 outline-offset-[-0.89px] outline-neutral-400 text-stone-900 text-xl font-medium leading-7 hover:bg-white/60 transition-all"
                       >
                         DOWNLOAD PDF
@@ -163,7 +198,7 @@ export function DocumentBankSection() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

@@ -1,22 +1,38 @@
+"use client";
+
+import { motion } from "motion/react";
 import Link from 'next/link';
 
 export function InteractiveVerificationSection() {
   return (
-    <section className="w-full bg-[#000B03]">
+    <section id="interactive-verification-desk" className="w-full bg-[#000B03]">
       <div className="section-inner py-16 lg:py-20">
         <div className="w-full max-w-[1755px] mx-auto mt-5">
-          <div className="flex justify-between items-center mb-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="flex justify-between items-center mb-10"
+          >
             <div className="w-[470px]">
               <div className="text-white text-5xl font-normal leading-[63px]">Interactive Verification Desk</div>
             </div>
             <div className="w-[555px] text-neutral-400 text-2xl font-normal leading-8">
               Review live sample layouts, zoom to read specific clauses, and export actual simulated mock documents.
             </div>
-          </div>
+          </motion.div>
 
           <div className="flex justify-between items-start gap-8">
             {/* PDF Viewer */}
-            <div className="w-[1052px] bg-white rounded-xl overflow-hidden shadow-lg shrink-0">
+            <motion.div
+              initial={{ opacity: 0, x: -50, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ scale: 1.01 }}
+              className="w-[1052px] bg-white rounded-xl overflow-hidden shadow-lg shrink-0"
+            >
               <div className="h-16 bg-slate-800 rounded-t-xl flex items-center px-6 justify-between">
                 <div className="flex items-center gap-2">
                   <div className="flex gap-1.5">
@@ -111,10 +127,16 @@ export function InteractiveVerificationSection() {
                 <span className="text-gray-200 text-xs font-medium">Secure SSL Previewing &bull; Decoupled sandbox environment</span>
                 <span className="text-green-600 text-xs font-medium">READY FOR EXPORT</span>
               </div>
-            </div>
+            </motion.div>
 
             {/* Sidebar */}
-            <div className="w-[659px] flex flex-col gap-11">
+            <motion.div
+              initial={{ opacity: 0, x: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="w-[659px] flex flex-col gap-11"
+            >
               <div className="bg-stone-900 rounded-sm overflow-hidden">
                 <div className="p-8 lg:p-10">
                   <div className="flex flex-col items-start gap-9">
@@ -152,18 +174,25 @@ export function InteractiveVerificationSection() {
                 </div>
 
                 <div className="px-8 lg:px-10 pb-8 lg:pb-10 flex flex-col gap-7">
-                  <Link
-                    href="/contact"
+                  <motion.a
+                    href="/assets/sample-report.pdf"
+                    target="_blank"
+                    download
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
                     className="w-full py-5 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm flex items-center justify-center text-stone-900 text-2xl font-medium leading-8 hover:opacity-90 transition-all"
                   >
                     DOWNLOAD FULL SAMPLE PDF
-                  </Link>
-                  <Link
-                    href="/contact"
+                  </motion.a>
+                  <motion.a
+                    href="/assets/sample-report.pdf"
+                    target="_blank"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
                     className="w-full py-5 bg-zinc-100/30 rounded-sm outline outline-1 outline-offset-[-1px] outline-neutral-400 flex items-center justify-center text-white text-2xl font-medium leading-8 hover:bg-zinc-100/40 transition-all"
                   >
                     VIEW FULL SCREEN MODE
-                  </Link>
+                  </motion.a>
                 </div>
               </div>
 
@@ -173,7 +202,7 @@ export function InteractiveVerificationSection() {
                   All formal reports are signed off dynamically by RICs-accredited structural engineers and certified business auditors.
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

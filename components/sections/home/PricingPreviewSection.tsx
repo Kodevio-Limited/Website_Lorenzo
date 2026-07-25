@@ -1,9 +1,12 @@
+"use client";
+
+import { motion } from "motion/react";
 import Link from 'next/link';
 
 const plans = [
   {
     name: 'Exterior Care Verification Plan',
-    price: '$499',
+    price: '$399',
     period: 'USD /MONTH',
     features: [
       'Exterior-only property verification',
@@ -17,7 +20,7 @@ const plans = [
   },
   {
     name: 'Property Care Plan',
-    price: '$799',
+    price: '$699',
     period: 'USD /MONTH',
     features: [
       'Interior and exterior property verification',
@@ -31,7 +34,7 @@ const plans = [
   },
   {
     name: 'Property Steward Plan',
-    price: '$1,099',
+    price: '$999',
     period: 'USD /MONTH',
     features: [
       'Premium protection plan',
@@ -64,25 +67,57 @@ export function PricingPreviewSection() {
       <div className="section-inner py-16 lg:py-20">
         <div className="w-full min-h-[calc(100vh-10rem)] flex flex-col justify-center items-center gap-8 lg:gap-10">
 
-          <span className="text-amber-200 text-2xl font-normal leading-8">PRICING</span>
-          <h2 className="text-white text-4xl sm:text-5xl font-normal leading-tight sm:leading-[63px] text-center">
-            Flexible Plans for Every Need
-          </h2>
-          <p className="w-full max-w-[763px] text-neutral-400 text-xl sm:text-2xl font-normal leading-8 text-center">
-            Whether you&apos;re a single home buyer or a corporate investor, we have a plan suited for you.
-          </p>
-
-          <Link
-            href="/pricing"
-            className="px-3.5 py-5 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm inline-flex items-center justify-center gap-2.5 text-stone-900 text-2xl font-medium leading-8 hover:opacity-90 transition-all"
+          <motion.span
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-amber-200 text-2xl font-normal leading-8"
           >
-            See More
-          </Link>
+            PRICING
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-white text-4xl sm:text-5xl font-normal leading-tight sm:leading-[63px] text-center"
+          >
+            Flexible Plans for Every Need
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-[763px] text-neutral-400 text-xl sm:text-2xl font-normal leading-8 text-center"
+          >
+            Whether you&apos;re a single home buyer or a corporate investor, we have a plan suited for you.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <Link
+              href="/pricing"
+              className="px-3.5 py-5 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm inline-flex items-center justify-center gap-2.5 text-stone-900 text-2xl font-medium leading-8 hover:opacity-90 transition-all"
+            >
+              See More
+            </Link>
+          </motion.div>
 
           <div className="w-full flex flex-col lg:flex-row justify-center items-start gap-6 lg:gap-8">
           {plans.map((plan, idx) => (
-            <div
+            <motion.div
               key={plan.name}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ type: "spring", stiffness: 60, damping: 14, delay: idx * 0.2 }}
+              whileHover={{ y: -8, scale: 1.02 }}
               className={`w-full lg:w-[460px] flex flex-col rounded-[34.66px] overflow-hidden ${
                 plan.highlight
                   ? 'bg-gradient-to-b from-yellow-600 via-yellow-600 to-yellow-700'
@@ -114,11 +149,15 @@ export function PricingPreviewSection() {
               </div>
 
               <div className="h-20 lg:h-24 relative flex items-center justify-center">
-                <div className="w-[90%] lg:w-[400px] h-14 lg:h-16 bg-gray-200/10 rounded-2xl outline outline-[1.24px] outline-gray-200 flex items-center justify-center hover:bg-gray-200/20 transition-all">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-[90%] lg:w-[400px] h-14 lg:h-16 bg-gray-200/10 rounded-2xl outline outline-[1.24px] outline-gray-200 flex items-center justify-center hover:bg-gray-200/20 transition-all cursor-pointer"
+                >
                   <span className="text-neutral-50 text-lg lg:text-xl font-medium leading-7 lg:leading-8">Get Access</span>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { motion } from "motion/react";
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -64,7 +65,10 @@ export function Header() {
   }, []);
 
   return (
-    <header
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
         visible ? 'translate-y-0' : '-translate-y-full'
       }`}
@@ -85,7 +89,8 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-10 xl:gap-16 2xl:gap-24">
+        <div className="hidden lg:flex items-center gap-8 xl:gap-12 2xl:gap-16">
+        <nav className="flex items-center gap-10 xl:gap-16 2xl:gap-24">
           {navLinks.map((link) => {
             if (link.hasDropdown === 'services') {
               return (
@@ -198,10 +203,11 @@ export function Header() {
 
         <Link
           href="/contact"
-          className="hidden lg:inline-flex px-3.5 py-5 items-center justify-center gap-2 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm text-stone-900 text-lg xl:text-2xl font-medium leading-6 xl:leading-8 hover:opacity-90 transition-all"
+          className="px-3.5 py-5 items-center justify-center gap-2 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm text-stone-900 text-lg xl:text-2xl font-medium leading-6 xl:leading-8 hover:opacity-90 transition-all inline-flex shrink-0"
         >
           REQUEST SERVICE
         </Link>
+        </div>
 
         <button
           className="lg:hidden text-white p-2"
@@ -256,6 +262,6 @@ export function Header() {
           </div>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 }

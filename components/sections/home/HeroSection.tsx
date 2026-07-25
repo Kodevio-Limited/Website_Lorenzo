@@ -33,19 +33,19 @@ export function HeroSection({ setView }: HeroSectionProps) {
         <div className="w-full">
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16">
             <motion.h1
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="text-zinc-100 text-5xl sm:text-6xl lg:text-7xl font-medium leading-tight lg:leading-[105.71px] max-w-4xl drop-shadow-lg"
             >
               You Can't Be Everywhere.<br className="hidden sm:block" />
-              <span className="lowercase font-medium">we are</span>
+              <span className="font-medium">We Are</span>
             </motion.h1>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="w-full lg:w-96 shrink-0"
             >
               <p className="text-white text-2xl font-normal leading-8">
@@ -55,9 +55,9 @@ export function HeroSection({ setView }: HeroSectionProps) {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+            initial={{ opacity: 0, y: 20, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="mt-9 w-full max-w-[493px]"
           >
             <p className="text-amber-200 text-2xl font-normal leading-8 whitespace-nowrap">
@@ -65,23 +65,27 @@ export function HeroSection({ setView }: HeroSectionProps) {
             </p>
 
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="flex gap-6 mt-9"
             >
-              <button
+              <motion.button
                 onClick={handleRequestService}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className="px-3.5 py-3 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm inline-flex items-center justify-center gap-2.5 text-stone-900 text-xl font-medium leading-7 hover:opacity-90 transition-all"
               >
                 REQUEST SERVICE
-              </button>
-              <a
+              </motion.button>
+              <motion.a
                 href="/pricing"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className="px-3.5 py-3 bg-zinc-100/30 rounded-sm outline outline-1 outline-offset-[-1px] outline-neutral-400 inline-flex items-center justify-center gap-2.5 text-white text-xl font-medium leading-7 hover:bg-zinc-100/40 transition-all"
               >
                 View Plans
-              </a>
+              </motion.a>
             </motion.div>
           </motion.div>
         </div>

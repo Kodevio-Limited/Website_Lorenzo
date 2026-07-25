@@ -1,7 +1,11 @@
+"use client";
+
+import { motion } from "motion/react";
+
 const services = [
   {
     title: 'Owner Support Services',
-    price: 'Starting at $499',
+    price: 'Starting at $399',
     features: [
       'Meeting attendance',
       'Vendor coordination',
@@ -34,7 +38,7 @@ const services = [
   },
   {
     title: 'Vacation Rental / Airbnb Verification',
-    price: 'Starting at $499',
+    price: 'Starting at $399',
     features: [
       'Guest-readiness verification',
       'Turnover verification',
@@ -45,7 +49,7 @@ const services = [
   },
   {
     title: 'Family Wellness Services',
-    price: 'Starting at $499',
+    price: 'Starting at $399',
     features: [
       'Wellness and safety verification visits',
       'Documented observations',
@@ -75,7 +79,7 @@ const services = [
   },
   {
     title: 'Material Delivery Verification',
-    price: 'Starting at $499',
+    price: 'Starting at $399',
     features: [
       'Verification of delivered materials',
       'Fixtures',
@@ -85,7 +89,7 @@ const services = [
   },
   {
     title: 'Property Concierge Coordination',
-    price: 'Starting at $499',
+    price: 'Starting at $399',
     features: [
       'Vendor scheduling',
       'Appointment coordination',
@@ -127,9 +131,14 @@ export function OtherServicesSection() {
           </div>
 
           <div className="w-full max-w-[1771px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
-              <div
+            {services.map((service, idx) => (
+              <motion.div
                 key={service.title}
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ type: "spring", stiffness: 50, damping: 12, delay: idx * 0.08 }}
+                whileHover={{ y: -6, scale: 1.02 }}
                 className="self-stretch p-10 bg-zinc-300/10 rounded-3xl outline outline-[1.24px] outline-offset-[-1.24px] outline-white/10 inline-flex flex-col justify-start items-start gap-6"
               >
                 <div className="self-stretch flex flex-col justify-start items-start gap-2.5">
@@ -155,7 +164,7 @@ export function OtherServicesSection() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

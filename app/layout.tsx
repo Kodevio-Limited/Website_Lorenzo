@@ -16,6 +16,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nexusproperty.com"),
   title: {
     default: "Nexus Property & Business Services",
     template: "%s | Nexus Property & Business Services",
@@ -29,10 +30,27 @@ export const metadata: Metadata = {
     "Jamaica property management",
     "diaspora property services",
   ],
+  icons: {
+    icon: [
+      { url: "/assets/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/assets/favicon.png",
+  },
   openGraph: {
+    title: "Nexus Property & Business Services",
+    description:
+      "You Can't Be Everywhere. We Are. Independent property verification, documentation, and business representation services across all 14 parishes of Jamaica.",
     siteName: "Nexus Property & Business Services",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/assets/logo.png",
+        width: 512,
+        height: 512,
+        alt: "Nexus Property & Business Services",
+      },
+    ],
   },
 };
 

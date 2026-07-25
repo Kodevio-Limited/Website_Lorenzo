@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "motion/react";
 
 const parishPins = [
   { name: "Hanover", x: "14%", y: "15%"},
@@ -80,15 +83,27 @@ export function ServiceAreaSection() {
         <div className="w-full min-h-[calc(100vh-8rem)] flex flex-col justify-center gap-6 lg:gap-8">
 
         <div className="w-full flex flex-col lg:flex-row justify-between items-end gap-6 lg:gap-12">
-          <div className="w-full lg:w-[500px] flex flex-col gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-[500px] flex flex-col gap-4"
+          >
             <span className="text-amber-200 text-xl lg:text-2xl font-normal leading-7 lg:leading-8">Serving Zone</span>
             <h2 className="text-white text-3xl lg:text-5xl font-normal leading-tight lg:leading-[63px]">
               SERVING ALL 14 PARISHES OF JAMAICA
             </h2>
-          </div>
-          <p className="w-full lg:w-[550px] text-neutral-400 text-lg lg:text-2xl font-normal leading-7 lg:leading-8">
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-[550px] text-neutral-400 text-lg lg:text-2xl font-normal leading-7 lg:leading-8"
+          >
             From Negril to Morant Point, we provide independent verification and representation services across the entire island of Jamaica. You can&apos;t be everywhere. We are.
-          </p>
+          </motion.p>
         </div>
 
         <div className="flex items-start gap-2 text-zinc-100 text-lg lg:text-2xl font-normal leading-7 lg:leading-8">
@@ -96,7 +111,13 @@ export function ServiceAreaSection() {
           <span>Service is subject to field-agent availability and service-specific travel requirements.</span>
         </div>
 
-        <div className="relative w-full max-w-[800px] lg:max-w-[1074px] mx-auto">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="relative w-full max-w-[800px] lg:max-w-[1074px] mx-auto"
+        >
           <img
             src="/assets/images/map.png"
             alt="Map of Jamaica with 14 parishes"
@@ -104,8 +125,12 @@ export function ServiceAreaSection() {
           />
 
           {parishPins.map((pin, idx) => (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.3 + idx * 0.1 }}
               className="absolute z-10 -translate-x-1/2 -translate-y-1/2 group cursor-default"
               style={{ left: pin.x, top: pin.y }}
             >
@@ -114,21 +139,35 @@ export function ServiceAreaSection() {
                   <div className="w-[26px] h-8 lg:w-9 lg:h-11 left-[4px] lg:left-[5.63px] top-[0.7px] lg:top-[0.94px] absolute bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700" />
                 </div>
                 <div className="size-[28px] lg:size-10 absolute bg-black rounded-full border-[2px] lg:border-[2.82px] border-amber-200 z-10" />
-                <svg className="w-5 h-6 lg:w-7 lg:h-8 relative z-20" viewBox="0 0 29 32" fill="none">
-                  <path d="M14.5 2C10 2 6.5 5.5 6.5 10c0 7 8 20 8 20s8-13 8-20c0-4.5-3.5-8-8-8z" fill="#D1A736" />
-                  <circle cx="14.5" cy="10" r="4" fill="black" />
+                <svg className="w-5 h-6 lg:w-7 lg:h-8 relative z-20" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#D1A736" />
+                  <circle cx="12" cy="9" r="3" fill="black" />
                 </svg>
               </div>
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 bg-[#000B03]/95 border border-amber-500/30 text-[10px] font-bold text-amber-400 px-2 py-0.5 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-20">
                 {pin.name}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="w-full flex flex-wrap justify-center gap-6 lg:gap-12 xl:gap-24 pt-6 lg:pt-8 border-t border-zinc-900/40">
-          {features.map((f) => (
-            <div key={f.title} className="w-36 lg:w-48 flex flex-col items-center gap-3 lg:gap-5">
+        <motion.div
+          initial={{ opacity: 0, y: 30, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full flex flex-wrap justify-center gap-6 lg:gap-12 xl:gap-24 pt-6 lg:pt-8 border-t border-zinc-900/40"
+        >
+          {features.map((f, idx) => (
+            <motion.div
+              key={f.title}
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ type: "spring", stiffness: 60, damping: 12, delay: 0.6 + idx * 0.12 }}
+              whileHover={{ y: -8, scale: 1.05 }}
+              className="w-36 lg:w-48 flex flex-col items-center gap-3 lg:gap-5"
+            >
               <div className="size-16 lg:size-24 flex items-center justify-center bg-gray-200/10 rounded-full outline outline-[1px] lg:outline-[1.39px] outline-offset-[-1px] lg:outline-offset-[-1.39px] outline-gray-200">
                 <div className="scale-[0.6] lg:scale-100">{f.icon}</div>
               </div>
@@ -138,9 +177,9 @@ export function ServiceAreaSection() {
               <p className="text-zinc-400 text-base lg:text-2xl font-normal leading-6 lg:leading-9 text-center">
                 {f.subtitle}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
       </div>

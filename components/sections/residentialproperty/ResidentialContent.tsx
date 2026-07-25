@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 const processSteps = [
   {
     title: 'Request & Detail',
@@ -49,7 +53,13 @@ export function ResidentialContent() {
     <section className="py-24 bg-[#000B03]">
       <div className="max-w-[1755px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-12 lg:gap-20">
-          <div className="w-full lg:w-[895px] flex flex-col gap-10">
+          <motion.div
+            initial={{ opacity: 0, x: -40, scale: 0.97 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-[895px] flex flex-col gap-10"
+          >
             <div className="flex flex-col gap-10">
               <h2 className="text-white text-4xl sm:text-5xl font-medium leading-tight sm:leading-[63px]">
                 What This Service Covers
@@ -66,7 +76,15 @@ export function ResidentialContent() {
               <div className="flex flex-col gap-12">
                 <div className="flex flex-col sm:flex-row gap-6 sm:gap-12">
                   {processSteps.slice(0, 2).map((step, i) => (
-                    <div key={i} className="w-full sm:w-96 h-56 bg-stone-900 rounded-sm overflow-hidden relative">
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 30, scale: 0.93 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      viewport={{ once: false, amount: 0.2 }}
+                      transition={{ type: "spring", stiffness: 60, damping: 14, delay: i * 0.12 }}
+                      whileHover={{ y: -4, scale: 1.02 }}
+                      className="w-full sm:w-96 h-56 bg-stone-900 rounded-sm overflow-hidden relative"
+                    >
                       <div className="size-12 absolute left-[18px] top-[14px] bg-neutral-600 rounded-full flex items-center justify-center">
                         <GoldIconBox />
                       </div>
@@ -78,12 +96,20 @@ export function ResidentialContent() {
                           {step.desc}
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
                 <div className="flex flex-col sm:flex-row gap-6 sm:gap-12">
                   {processSteps.slice(2, 4).map((step, i) => (
-                    <div key={i} className="w-full sm:w-96 h-56 bg-stone-900 rounded-sm overflow-hidden relative">
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 30, scale: 0.93 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      viewport={{ once: false, amount: 0.2 }}
+                      transition={{ type: "spring", stiffness: 60, damping: 14, delay: 0.3 + i * 0.12 }}
+                      whileHover={{ y: -4, scale: 1.02 }}
+                      className="w-full sm:w-96 h-56 bg-stone-900 rounded-sm overflow-hidden relative"
+                    >
                       <div className="size-12 absolute left-[18px] top-[14px] bg-neutral-600 rounded-full flex items-center justify-center">
                         <GoldIconBox />
                       </div>
@@ -95,10 +121,17 @@ export function ResidentialContent() {
                           {step.desc}
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-                <div className="w-full sm:w-[879px] h-32 bg-stone-900 rounded-sm overflow-hidden relative">
+                <motion.div
+                  initial={{ opacity: 0, y: 20, scale: 0.97 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ scale: 1.01 }}
+                  className="w-full sm:w-[879px] h-32 bg-stone-900 rounded-sm overflow-hidden relative"
+                >
                   <div className="size-12 absolute left-[17px] top-[29px] bg-neutral-600 rounded-full flex items-center justify-center">
                     <GoldIconBox />
                   </div>
@@ -110,18 +143,30 @@ export function ResidentialContent() {
                       You receive a comprehensive, secure digital report detailing our documented observations.
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="w-full lg:w-[700px] bg-stone-900 rounded-sm overflow-hidden p-10 lg:p-12">
+          <motion.div
+            initial={{ opacity: 0, x: 40, scale: 0.97 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-[700px] bg-stone-900 rounded-sm overflow-hidden p-10 lg:p-12"
+          >
             <h3 className="text-white text-3xl lg:text-5xl font-medium leading-10 lg:leading-[63px] mb-10 lg:mb-16">
               Who Needs This?
             </h3>
             <div className="flex flex-col gap-10 lg:gap-16">
               {whoNeedsThis.map((item, i) => (
-                <div key={i}>
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: 0.3 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                >
                   <div className="flex items-center gap-3 mb-4 lg:mb-6">
                     <div className="size-9 relative">
                       <div className="size-7 left-[3px] top-[3px] absolute bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700" />
@@ -133,10 +178,10 @@ export function ResidentialContent() {
                   <p className="text-neutral-400 text-lg lg:text-2xl font-normal leading-7 lg:leading-9 max-w-[551px]">
                     {item.desc}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

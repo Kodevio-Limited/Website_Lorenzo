@@ -44,18 +44,18 @@ export function HowItWorksSection() {
             <motion.span
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="text-amber-200 text-2xl font-normal leading-8"
             >
               OUR PROCESS
             </motion.span>
 
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="w-full max-w-[580px] text-white text-4xl sm:text-5xl font-normal leading-tight sm:leading-[63px]"
             >
               SIMPLE. TRANSPARENT. EFFECTIVE.<br />FROM START TO FINISH
@@ -64,8 +64,8 @@ export function HowItWorksSection() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="w-full max-w-[580px] text-neutral-400 text-xl sm:text-2xl font-normal leading-8"
             >
               Our streamlined process keeps every step clear and accountable&mdash;from booking to final report&mdash;so you can move forward with confidence.
@@ -76,11 +76,11 @@ export function HowItWorksSection() {
             {steps.map((step, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.15 + idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                initial={{ opacity: 0, x: 60, scale: 0.9 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ type: "spring", stiffness: 60, damping: 15, delay: 0.15 + idx * 0.2 }}
+                whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.3 } }}
                 className="relative rounded-xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.07] hover:border-amber-500/20 backdrop-blur-md px-6 py-5 transition-all duration-300 shadow-xl group"
               >
                 <div className="flex items-start gap-5">

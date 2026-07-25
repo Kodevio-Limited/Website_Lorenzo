@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -58,8 +61,15 @@ export function ServicesGridSection() {
       <div className="max-w-[1755px] mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <Link
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ type: "spring", stiffness: 50, damping: 14, delay: index * 0.08 }}
+              whileHover={{ y: -6, scale: 1.02 }}
+            >
+            <Link
               href={service.href}
               className="bg-stone-900 rounded-3xl overflow-hidden flex flex-col group min-h-[502px]"
             >
@@ -90,6 +100,7 @@ export function ServicesGridSection() {
                 </div>
               </div>
             </Link>
+            </motion.div>
           ))}
         </div>
       </div>

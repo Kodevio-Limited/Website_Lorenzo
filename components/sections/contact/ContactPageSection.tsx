@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from "motion/react";
 import Link from 'next/link';
 
 export function ContactPageSection() {
@@ -11,7 +12,13 @@ export function ContactPageSection() {
       <div className="section-inner py-16 lg:py-20">
         <div className="w-full max-w-[1755px] mx-auto flex flex-col lg:flex-row justify-between items-start gap-8">
           {/* Left: Form */}
-          <div className="w-full lg:w-[968px] bg-stone-900 rounded-sm overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, x: -40, scale: 0.97 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-[968px] bg-stone-900 rounded-sm overflow-hidden"
+          >
             <div className="p-8 lg:p-[53px]">
               <div className="flex flex-col items-start gap-5 mb-10">
                 <div className="text-white text-3xl font-medium leading-10">Send a Message</div>
@@ -177,23 +184,37 @@ export function ContactPageSection() {
                 </div>
 
                 {/* SEND MESSAGE */}
-                <button
+                <motion.button
                   type="button"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   className="w-full py-5 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm flex items-center justify-center gap-2.5 text-stone-900 text-2xl font-medium leading-8 hover:opacity-90 transition-all"
                 >
                   SEND MESSAGE
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-stone-900">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
-                </button>
+                </motion.button>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: Info Cards */}
-          <div className="w-full lg:w-[758px] flex flex-col gap-7">
+          <motion.div
+            initial={{ opacity: 0, x: 40, scale: 0.97 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-[758px] flex flex-col gap-7"
+          >
             {/* Call Us Directly */}
-            <div className="w-full h-32 bg-stone-900 rounded-sm overflow-hidden relative">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full h-32 bg-stone-900 rounded-sm overflow-hidden relative"
+            >
               <div className="absolute left-6 top-6 flex items-start gap-6">
                 <div className="w-16 h-20 bg-stone-500 rounded-[3px] relative overflow-hidden flex items-center justify-center">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="2">
@@ -205,10 +226,16 @@ export function ContactPageSection() {
                   <div className="text-white text-3xl font-medium leading-10">USA OFFICE: (561) 639-8772</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Email Support */}
-            <div className="w-full h-32 bg-stone-900 rounded-sm overflow-hidden relative">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full h-32 bg-stone-900 rounded-sm overflow-hidden relative"
+            >
               <div className="absolute left-6 top-6 flex items-start gap-6">
                 <div className="w-16 h-20 bg-stone-500 rounded-[3px] relative overflow-hidden flex items-center justify-center">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="2">
@@ -221,10 +248,16 @@ export function ContactPageSection() {
                   <div className="text-white text-3xl font-medium leading-10">info@nexuspbs.net</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Business Hours */}
-            <div className="w-full h-64 bg-stone-900 rounded-sm overflow-hidden relative">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full h-64 bg-stone-900 rounded-sm overflow-hidden relative"
+            >
               <div className="absolute left-7 top-[25px] flex items-center gap-6">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="2">
                   <circle cx="12" cy="12" r="10" />
@@ -244,10 +277,16 @@ export function ContactPageSection() {
                   <div className="text-red-600 text-lg font-normal leading-7">CLOSED</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service Area */}
-            <div className="w-full h-[482px] bg-stone-900 rounded-sm overflow-hidden relative">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full h-[482px] bg-stone-900 rounded-sm overflow-hidden relative"
+            >
               <div className="absolute left-7 top-[25px] flex items-center gap-6">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="2">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -265,8 +304,8 @@ export function ContactPageSection() {
               <div className="absolute left-[83px] top-[82px] text-zinc-400 text-xl font-normal leading-7 max-w-[607px]">
                 Serving Kingston, St. Andrew, and the wider Jamaican corporate area. Full island coverage available upon request.
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -13,10 +13,10 @@ export function FounderSection() {
         <div className="w-full min-h-[calc(100vh-10rem)] flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-20">
 
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, x: -60, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="w-full lg:w-[656px] shrink-0"
           >
             <img
@@ -28,10 +28,10 @@ export function FounderSection() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            initial={{ opacity: 0, x: 60, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="w-full lg:w-[964px] flex flex-col items-start gap-16 lg:gap-20"
           >
             <div className="flex flex-col items-start gap-5">
@@ -50,12 +50,14 @@ export function FounderSection() {
               </div>
             </div>
 
-            <a
+            <motion.a
               href="/about"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="px-3.5 py-5 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm inline-flex items-center justify-center gap-2.5 text-stone-900 text-2xl font-medium leading-8 hover:opacity-90 transition-all"
             >
               About Us
-            </a>
+            </motion.a>
 
             <p className="font-['cursive'] text-4xl sm:text-5xl text-zinc-200/90 tracking-wide leading-snug">
               Lorenzo Andrew Campbell

@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import Link from 'next/link';
 
 export function ContactHeroSection() {
@@ -11,13 +14,33 @@ export function ContactHeroSection() {
             <span className="text-white">Contact</span>
           </div>
 
-          <div className="text-center text-amber-200 text-2xl font-normal leading-8">Contact Us</div>
-          <div className="w-full max-w-[1046px] text-center text-white text-5xl font-normal leading-[63px]">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center text-amber-200 text-2xl font-normal leading-8"
+          >
+            Contact Us
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-[1046px] text-center text-white text-5xl font-normal leading-[63px]"
+          >
             We&apos;re here to assist you with property verification and business services.
-          </div>
-          <div className="w-full max-w-[1074px] text-center text-neutral-400 text-2xl font-normal leading-8">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-[1074px] text-center text-neutral-400 text-2xl font-normal leading-8"
+          >
             Reach out to our team for inquiries, professional consultations, or direct service requests. We guarantee a prompt and thorough response.
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

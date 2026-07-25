@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import Link from 'next/link';
 
 interface BreadcrumbItem {
@@ -11,7 +14,12 @@ interface BreadcrumbProps {
 
 export function Breadcrumb({ items }: BreadcrumbProps) {
   return (
-    <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[#9B9B8A]">
+    <motion.nav
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+      aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-[#9B9B8A]"
+    >
       {/* Home icon */}
       <Link href="/" className="hover:text-white transition-colors flex items-center">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -32,6 +40,6 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
           )}
         </span>
       ))}
-    </nav>
+    </motion.nav>
   );
 }

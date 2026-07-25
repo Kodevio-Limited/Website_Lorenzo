@@ -35,10 +35,10 @@ export function WhatWeDoSection() {
             <div key={step.number} className="flex flex-col items-center">
               {step.direction === "up" ? (
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: parseInt(step.number) * 0.1 }}
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ type: "spring", stiffness: 50, damping: 12, delay: parseInt(step.number) * 0.15 }}
                   className="flex flex-col items-center text-center gap-4"
                 >
                   <h3 className="text-white text-xl xl:text-3xl font-medium leading-snug xl:leading-10">
@@ -79,10 +79,10 @@ export function WhatWeDoSection() {
 
               {step.direction === "down" ? (
                 <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: parseInt(step.number) * 0.1 }}
+                  initial={{ opacity: 0, y: -30, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ type: "spring", stiffness: 50, damping: 12, delay: parseInt(step.number) * 0.15 }}
                   className="flex flex-col items-center text-center gap-4"
                 >
                   <h3 className="text-white text-xl xl:text-3xl font-medium leading-snug xl:leading-10">
@@ -105,10 +105,10 @@ export function WhatWeDoSection() {
           {steps.map((step, idx) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              initial={{ opacity: 0, x: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ type: "spring", stiffness: 60, damping: 14, delay: idx * 0.15 }}
               className="relative"
             >
               <div className="absolute -left-[45px] top-1 z-10 size-8 rounded-full bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 shadow-lg" />

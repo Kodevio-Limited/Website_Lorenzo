@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "motion/react";
 
 const parishPins = [
   { name: "Hanover", x: "14%", y: "15%"},
@@ -28,8 +31,12 @@ export function ServiceAreaMapSection() {
           />
 
           {parishPins.map((pin, idx) => (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.2 + idx * 0.08 }}
               className="absolute z-10 -translate-x-1/2 -translate-y-1/2 group cursor-default"
               style={{ left: pin.x, top: pin.y }}
             >
@@ -46,7 +53,7 @@ export function ServiceAreaMapSection() {
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 bg-[#000B03]/95 border border-amber-500/30 text-[10px] font-bold text-amber-400 px-2 py-0.5 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-20">
                 {pin.name}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

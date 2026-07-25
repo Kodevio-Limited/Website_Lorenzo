@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import Link from 'next/link';
 
 export function FaqHeroSection() {
@@ -12,10 +15,24 @@ export function FaqHeroSection() {
           </div>
 
           <div className="w-full max-w-[651px] flex flex-col items-center gap-6">
-            <div className="text-center text-amber-200 text-2xl font-normal leading-8">FAQ</div>
-            <div className="text-center text-white text-5xl font-normal leading-[70px]">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="text-center text-amber-200 text-2xl font-normal leading-8"
+            >
+              FAQ
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-center text-white text-5xl font-normal leading-[70px]"
+            >
               Everything You Need to Know
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

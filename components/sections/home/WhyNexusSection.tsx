@@ -61,10 +61,10 @@ export function WhyNexusSection() {
         <div className="w-full flex flex-col lg:flex-row justify-between gap-12 lg:gap-20 items-start">
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="w-full lg:w-[856px] flex flex-col items-start"
           >
             <div className="flex flex-col gap-5">
@@ -87,14 +87,22 @@ export function WhyNexusSection() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="w-full lg:w-[756px] flex flex-col gap-20 lg:pt-48"
           >
             {items.map((item, i) => (
-              <div key={i} className="flex flex-col items-start gap-2.5">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ type: "spring", stiffness: 70, damping: 14, delay: i * 0.15 }}
+                whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                className="flex flex-col items-start gap-2.5"
+              >
                 <div className="flex items-center gap-2.5">
                   <div className="size-7 flex items-center justify-center shrink-0">
                     {item.icon}
@@ -102,7 +110,7 @@ export function WhyNexusSection() {
                   <span className="text-white text-3xl font-medium leading-10" style={{ fontFamily: "'Helvetica Neue', sans-serif" }}>{item.title}</span>
                 </div>
                 <span className="text-zinc-400 text-2xl font-normal leading-8" style={{ fontFamily: "'Helvetica Neue', sans-serif" }}>{item.desc}</span>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
 

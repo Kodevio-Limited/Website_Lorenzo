@@ -1,9 +1,12 @@
+"use client";
+
+import { motion } from "motion/react";
 import Link from 'next/link';
 
 const plans = [
   {
     name: 'Exterior Care Verification Plan',
-    price: '$499',
+    price: '$399',
     period: '/MONTH',
     features: [
       'Exterior-only property verification',
@@ -17,7 +20,7 @@ const plans = [
   },
   {
     name: 'Property Care Plan',
-    price: '$799',
+    price: '$699',
     period: '/MONTH',
     features: [
       'Interior and exterior property verification',
@@ -31,7 +34,7 @@ const plans = [
   },
   {
     name: 'Property Steward Plan',
-    price: '$1,099',
+    price: '$999',
     period: '/MONTH',
     features: [
       'Premium protection plan',
@@ -87,14 +90,19 @@ export function PropertyVerificationPlansSection() {
 
           <div className="w-full flex flex-col lg:flex-row justify-center items-start gap-6 mx-auto">
             {plans.map((plan, idx) => (
-              <div
+              <motion.div
                 key={plan.name}
+                initial={{ opacity: 0, y: 60, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ type: "spring", stiffness: 60, damping: 14, delay: idx * 0.2 }}
+                whileHover={{ y: -8, scale: 1.02 }}
                 className={`w-full lg:w-[567px] flex flex-col ${
                   idx !== 1 ? 'lg:pt-36' : ''
                 }`}
               >
                 <div
-                  className={`w-full min-h-[1015px] flex flex-col rounded-[34.66px] overflow-hidden ${
+                  className={`w-full flex flex-col rounded-[34.66px] ${
                     plan.highlight
                       ? 'bg-gradient-to-b from-yellow-600 via-yellow-600 to-yellow-700'
                       : 'bg-zinc-300/20'
@@ -127,14 +135,18 @@ export function PropertyVerificationPlansSection() {
                   </div>
 
                   <div className="self-stretch h-36 relative flex items-start justify-center">
-                    <div className={`w-[468px] h-20 rounded-2xl outline outline-[1.24px] outline-offset-[-1.24px] outline-gray-200 flex items-center justify-center ${
-                      plan.highlight ? 'bg-gray-200/30' : 'bg-gray-200/10'
-                    }`}>
+                    <motion.div
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                      className={`w-[468px] h-20 rounded-2xl outline outline-[1.24px] outline-offset-[-1.24px] outline-gray-200 flex items-center justify-center cursor-pointer ${
+                        plan.highlight ? 'bg-gray-200/30' : 'bg-gray-200/10'
+                      }`}
+                    >
                       <span className="text-neutral-50 text-2xl font-medium leading-8">Request Service</span>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
