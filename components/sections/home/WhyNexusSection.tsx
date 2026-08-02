@@ -68,12 +68,12 @@ export function WhyNexusSection() {
             className="w-full lg:w-[856px] flex flex-col items-start"
           >
             <div className="flex flex-col gap-5">
-              <span className="text-amber-200 text-2xl font-normal leading-8" style={{ fontFamily: "'Helvetica Neue', sans-serif" }}>Why Nexus</span>
-              <h2 className="text-white text-5xl font-normal leading-[63px]" style={{ fontFamily: "'Helvetica Neue', sans-serif" }}>
+              <span className="text-amber-200 text-lg sm:text-xl md:text-2xl font-normal leading-7 md:leading-8" style={{ fontFamily: "'Helvetica Neue', sans-serif" }}>Why Nexus</span>
+              <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-normal leading-tight sm:leading-[63px]" style={{ fontFamily: "'Helvetica Neue', sans-serif" }}>
                 THE TRUE VALUE<br />OF KNOWING.
               </h2>
             </div>
-            <p className="mt-5 w-full max-w-[882px] text-neutral-400 text-2xl font-normal leading-8" style={{ fontFamily: "'Helvetica Neue', sans-serif" }}>
+            <p className="mt-5 w-full max-w-[882px] text-neutral-400 text-base sm:text-lg md:text-xl lg:text-2xl font-normal leading-7 md:leading-8" style={{ fontFamily: "'Helvetica Neue', sans-serif" }}>
               Without verification, small problems become expensive disasters. We provide the eyes, the ears, and the documentation you need to make confident decisions.
             </p>
             <div className="mt-8 lg:mt-10 w-full">
@@ -91,7 +91,7 @@ export function WhyNexusSection() {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full lg:w-[756px] flex flex-col gap-20 lg:pt-48"
+            className="w-full lg:w-[756px] flex flex-col gap-10 md:gap-14 lg:gap-20 lg:pt-0 xl:pt-48"
           >
             {items.map((item, i) => (
               <motion.div
@@ -101,15 +101,15 @@ export function WhyNexusSection() {
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ type: "spring", stiffness: 70, damping: 14, delay: i * 0.15 }}
                 whileHover={{ x: 5, transition: { duration: 0.2 } }}
-                className="flex flex-col items-start gap-2.5"
+                className="flex flex-col items-start gap-2 md:gap-2.5"
               >
-                <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-2 md:gap-2.5">
                   <div className="size-7 flex items-center justify-center shrink-0">
                     {item.icon}
                   </div>
-                  <span className="text-white text-3xl font-medium leading-10" style={{ fontFamily: "'Helvetica Neue', sans-serif" }}>{item.title}</span>
+                  <span className="text-white text-xl sm:text-2xl md:text-3xl font-medium leading-8 md:leading-10" style={{ fontFamily: "'Helvetica Neue', sans-serif" }}>{item.title}</span>
                 </div>
-                <span className="text-zinc-400 text-2xl font-normal leading-8" style={{ fontFamily: "'Helvetica Neue', sans-serif" }}>{item.desc}</span>
+                <span className="text-zinc-400 text-base sm:text-lg md:text-2xl font-normal leading-7 md:leading-8" style={{ fontFamily: "'Helvetica Neue', sans-serif" }}>{item.desc}</span>
               </motion.div>
             ))}
           </motion.div>

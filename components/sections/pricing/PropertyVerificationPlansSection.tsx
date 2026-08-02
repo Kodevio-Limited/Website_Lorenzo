@@ -77,12 +77,12 @@ export function PropertyVerificationPlansSection() {
     <section className="w-full bg-[#000B03]">
       <div className="section-inner py-10">
         <div className="flex flex-col items-center gap-16 w-full">
-          <div className="flex flex-col items-center gap-5">
-            <div className="text-center text-amber-200 text-xl font-medium uppercase leading-7 tracking-widest">
+          <div className="flex flex-col items-center gap-4 md:gap-5">
+            <div className="text-center text-amber-200 text-base sm:text-lg md:text-xl font-medium uppercase leading-6 md:leading-7 tracking-widest">
               MONTHLY PLANS
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-center text-white text-5xl sm:text-6xl font-medium leading-[65.36px]">
+              <div className="text-center text-white text-3xl sm:text-4xl md:text-5xl sm:text-6xl font-medium leading-tight md:leading-[65.36px]">
                 Property Verification Plans
               </div>
             </div>
@@ -97,8 +97,8 @@ export function PropertyVerificationPlansSection() {
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ type: "spring", stiffness: 60, damping: 14, delay: idx * 0.2 }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className={`w-full lg:w-[567px] flex flex-col ${
-                  idx !== 1 ? 'lg:pt-36' : ''
+                className={`w-full lg:w-[567px] max-w-[567px] mx-auto flex flex-col ${
+                  idx !== 1 ? 'lg:pt-0 xl:pt-36' : ''
                 }`}
               >
                 <div
@@ -108,41 +108,41 @@ export function PropertyVerificationPlansSection() {
                       : 'bg-zinc-300/20'
                   }`}
                 >
-                  <div className="flex-1 p-12 flex flex-col justify-start items-start gap-14">
-                    <div className="self-stretch flex flex-col justify-start items-start gap-7">
+                  <div className="flex-1 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-start items-start gap-8 md:gap-10 lg:gap-14">
+                    <div className="self-stretch flex flex-col justify-start items-start gap-5 md:gap-7">
                       <div className="self-stretch flex flex-col justify-start items-start">
-                        <div className="text-neutral-50 text-3xl font-medium leading-10">
+                        <div className="text-neutral-50 text-xl sm:text-2xl md:text-3xl font-medium leading-8 md:leading-10">
                           {plan.name}
                         </div>
                       </div>
                       <div className="self-stretch flex flex-col justify-start items-start">
-                        <div className="text-neutral-50 text-6xl font-semibold leading-[83.19px]">
+                        <div className="text-neutral-50 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight md:leading-[83.19px]">
                           {plan.price}{' '}
-                          <span className="text-neutral-50 text-3xl font-normal leading-10">USD </span>
-                          <span className="text-zinc-400 text-3xl font-normal leading-10">{plan.period}</span>
+                          <span className="text-neutral-50 text-lg sm:text-xl md:text-2xl md:text-3xl font-normal leading-7 md:leading-10">USD </span>
+                          <span className="text-zinc-400 text-lg sm:text-xl md:text-2xl md:text-3xl font-normal leading-7 md:leading-10">{plan.period}</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="self-stretch flex flex-col justify-start items-start gap-7">
+                    <div className="self-stretch flex flex-col justify-start items-start gap-4 md:gap-6 lg:gap-7">
                       {plan.features.map((f) => (
-                        <div key={f} className="self-stretch inline-flex justify-start items-center gap-4">
+                        <div key={f} className="self-stretch inline-flex justify-start items-center gap-3 md:gap-4">
                           {plan.highlight ? <WhiteCheckIcon /> : <CheckIcon />}
-                          <div className="text-white text-xl font-normal leading-7">{f}</div>
+                          <div className="text-white text-base sm:text-lg md:text-xl font-normal leading-6 md:leading-7">{f}</div>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="self-stretch h-36 relative flex items-start justify-center">
+                  <div className="self-stretch h-28 md:h-32 lg:h-36 relative flex items-start justify-center p-4 md:p-6">
                     <motion.div
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
-                      className={`w-[468px] h-20 rounded-2xl outline outline-[1.24px] outline-offset-[-1.24px] outline-gray-200 flex items-center justify-center cursor-pointer ${
+                      className={`w-full max-w-[468px] h-14 md:h-16 lg:h-20 rounded-2xl outline outline-[1.24px] outline-offset-[-1.24px] outline-gray-200 flex items-center justify-center cursor-pointer ${
                         plan.highlight ? 'bg-gray-200/30' : 'bg-gray-200/10'
                       }`}
                     >
-                      <span className="text-neutral-50 text-2xl font-medium leading-8">Request Service</span>
+                      <span className="text-neutral-50 text-base sm:text-lg md:text-xl md:text-2xl font-medium leading-7 md:leading-8">Request Service</span>
                     </motion.div>
                   </div>
                 </div>

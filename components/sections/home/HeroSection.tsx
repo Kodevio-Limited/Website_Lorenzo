@@ -36,7 +36,7 @@ export function HeroSection({ setView }: HeroSectionProps) {
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="text-zinc-100 text-5xl sm:text-6xl lg:text-7xl font-medium leading-tight lg:leading-[105.71px] max-w-4xl drop-shadow-lg"
+              className="text-zinc-100 text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-medium leading-tight lg:leading-[105.71px] max-w-4xl drop-shadow-lg"
             >
               You Can't Be Everywhere.<br className="hidden sm:block" />
               <span className="font-medium">We Are</span>
@@ -48,7 +48,7 @@ export function HeroSection({ setView }: HeroSectionProps) {
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="w-full lg:w-96 shrink-0"
             >
-              <p className="text-white text-2xl font-normal leading-8">
+              <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl font-normal leading-7 md:leading-8">
                 YOUR EYES. YOUR EARS. YOUR IN-PERSON REPRESENTATIVE IN JAMAICA.
               </p>
             </motion.div>
@@ -60,7 +60,7 @@ export function HeroSection({ setView }: HeroSectionProps) {
             transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="mt-9 w-full max-w-[493px]"
           >
-            <p className="text-amber-200 text-2xl font-normal leading-8 whitespace-nowrap">
+            <p className="text-amber-200 text-base sm:text-lg md:text-xl lg:text-2xl font-normal leading-7 md:leading-8">
               A Campbell Legacy Holdings, LLC Company
             </p>
 
@@ -68,13 +68,13 @@ export function HeroSection({ setView }: HeroSectionProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="flex gap-6 mt-9"
+              className="flex flex-wrap gap-4 sm:gap-6 mt-9"
             >
               <motion.button
                 onClick={handleRequestService}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-3.5 py-3 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm inline-flex items-center justify-center gap-2.5 text-stone-900 text-xl font-medium leading-7 hover:opacity-90 transition-all"
+                className="px-3 sm:px-3.5 py-2.5 sm:py-3 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm inline-flex items-center justify-center gap-2 sm:gap-2.5 text-stone-900 text-base sm:text-lg lg:text-xl font-medium leading-6 sm:leading-7 hover:opacity-90 transition-all"
               >
                 REQUEST SERVICE
               </motion.button>
@@ -82,7 +82,7 @@ export function HeroSection({ setView }: HeroSectionProps) {
                 href="/pricing"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-3.5 py-3 bg-zinc-100/30 rounded-sm outline outline-1 outline-offset-[-1px] outline-neutral-400 inline-flex items-center justify-center gap-2.5 text-white text-xl font-medium leading-7 hover:bg-zinc-100/40 transition-all"
+                className="px-3 sm:px-3.5 py-2.5 sm:py-3 bg-zinc-100/30 rounded-sm outline outline-1 outline-offset-[-1px] outline-neutral-400 inline-flex items-center justify-center gap-2 sm:gap-2.5 text-white text-base sm:text-lg lg:text-xl font-medium leading-6 sm:leading-7 hover:bg-zinc-100/40 transition-all"
               >
                 View Plans
               </motion.a>
