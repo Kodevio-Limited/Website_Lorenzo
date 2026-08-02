@@ -80,7 +80,7 @@ export function ContactFormSection() {
                     <input
                       type="text"
                       required
-                      placeholder="Enter your name"
+                      placeholder="Your full name"
                       className="w-full bg-transparent text-neutral-400 text-sm lg:text-base font-medium leading-5 lg:leading-6 focus:outline-none focus:text-white placeholder-neutral-400"
                       style={{ fontFamily: "'Satoshi', sans-serif" }}
                     />
@@ -96,7 +96,7 @@ export function ContactFormSection() {
                     <input
                       type="tel"
                       required
-                      placeholder="Enter you phone number"
+                      placeholder="(876) 555-0199"
                       className="w-full bg-transparent text-neutral-400 text-sm lg:text-base font-medium leading-5 lg:leading-6 focus:outline-none focus:text-white placeholder-neutral-400"
                       style={{ fontFamily: "'Satoshi', sans-serif" }}
                     />
@@ -115,7 +115,7 @@ export function ContactFormSection() {
                     <input
                       type="email"
                       required
-                      placeholder="Enter you email"
+                      placeholder="you@example.com"
                       className="w-full bg-transparent text-neutral-400 text-sm lg:text-base font-medium leading-5 lg:leading-6 focus:outline-none focus:text-white placeholder-neutral-400"
                       style={{ fontFamily: "'Satoshi', sans-serif" }}
                     />

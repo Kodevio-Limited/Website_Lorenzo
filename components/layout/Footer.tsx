@@ -135,29 +135,29 @@ export function Footer() {
               &copy; 2026 Nexus Property &amp; Business Services. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
-              <motion.a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+              <motion.span title="Facebook — coming soon" aria-label="Facebook — coming soon"
                 whileHover={{ scale: 1.15, rotate: 5 }}
-                className="size-9 lg:size-10 flex items-center justify-center rounded-full bg-neutral-700/50 hover:bg-neutral-600/50 transition-colors">
+                className="size-9 lg:size-10 flex items-center justify-center rounded-full bg-neutral-700/50 opacity-60 cursor-not-allowed transition-colors">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#A1A1AA" className="lg:w-5 lg:h-5">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
               </svg>
-            </motion.a>
-            <motion.a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"
+            </motion.span>
+            <motion.span title="Twitter — coming soon" aria-label="Twitter — coming soon"
               whileHover={{ scale: 1.15, rotate: 5 }}
-              className="size-9 lg:size-10 flex items-center justify-center rounded-full bg-neutral-700/50 hover:bg-neutral-600/50 transition-colors">
+              className="size-9 lg:size-10 flex items-center justify-center rounded-full bg-neutral-700/50 opacity-60 cursor-not-allowed transition-colors">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#A1A1AA" className="lg:w-5 lg:h-5">
                 <path d="M4 4l6.25 8.333L4 20h1.416l5.5-7.333L15.833 20H21l-6.667-8.889L20.5 4h-1.416l-5.084 6.778L9.167 4H4z" />
               </svg>
-            </motion.a>
-            <motion.a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+            </motion.span>
+            <motion.span title="Instagram — coming soon" aria-label="Instagram — coming soon"
               whileHover={{ scale: 1.15, rotate: 5 }}
-              className="size-9 lg:size-10 flex items-center justify-center rounded-full bg-neutral-700/50 hover:bg-neutral-600/50 transition-colors">
+              className="size-9 lg:size-10 flex items-center justify-center rounded-full bg-neutral-700/50 opacity-60 cursor-not-allowed transition-colors">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lg:w-5 lg:h-5">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
               </svg>
-            </motion.a>
+            </motion.span>
             <motion.a href="https://wa.me/15616398772" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
               whileHover={{ scale: 1.15, rotate: 5 }}
               className="size-9 lg:size-10 flex items-center justify-center rounded-full bg-neutral-700/50 hover:bg-neutral-600/50 transition-colors">

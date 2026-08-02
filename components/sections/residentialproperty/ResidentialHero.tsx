@@ -43,7 +43,9 @@ export function ResidentialHero() {
                 Request a Quote
               </Link>
               <Link
-                href="#"
+                href="https://clientdashbaordlorenzo.vercel.app/login"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-3.5 py-5 bg-zinc-100/30 rounded-sm outline outline-1 outline-offset-[-1px] outline-neutral-400 inline-flex items-center justify-center gap-2.5 text-white text-xl lg:text-2xl font-medium leading-8 hover:bg-zinc-100/40 transition-all"
               >
                 Client Portal

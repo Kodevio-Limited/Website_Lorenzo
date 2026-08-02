@@ -67,7 +67,7 @@ export function ContactPageSection() {
                       </svg>
                       <input
                         type="text"
-                        placeholder="Enter your name"
+                        placeholder="Your full name"
                         className="w-full bg-transparent text-white text-base font-medium leading-6 placeholder-neutral-400 outline-none"
                       />
                     </div>
@@ -80,7 +80,7 @@ export function ContactPageSection() {
                       </svg>
                       <input
                         type="tel"
-                        placeholder="Enter your phone number"
+                        placeholder="(876) 555-0199"
                         className="w-full bg-transparent text-white text-base font-medium leading-6 placeholder-neutral-400 outline-none"
                       />
                     </div>
@@ -97,7 +97,7 @@ export function ContactPageSection() {
                       </svg>
                     <input
                       type="email"
-                      placeholder="Enter your email"
+                      placeholder="you@example.com"
                       className="w-full bg-transparent text-white text-base font-medium leading-6 placeholder-neutral-400 outline-none"
                     />
                   </div>
@@ -132,7 +132,18 @@ export function ContactPageSection() {
                         <option value="" disabled>Select target parish</option>
                         <option value="kingston">Kingston</option>
                         <option value="st-andrew">St. Andrew</option>
+                        <option value="st-thomas">St. Thomas</option>
+                        <option value="portland">Portland</option>
+                        <option value="st-mary">St. Mary</option>
+                        <option value="st-ann">St. Ann</option>
                         <option value="st-catherine">St. Catherine</option>
+                        <option value="clarendon">Clarendon</option>
+                        <option value="manchester">Manchester</option>
+                        <option value="st-elizabeth">St. Elizabeth</option>
+                        <option value="westmoreland">Westmoreland</option>
+                        <option value="st-james">St. James</option>
+                        <option value="trelawny">Trelawny</option>
+                        <option value="hanover">Hanover</option>
                       </select>
                       <svg width="12" height="24" viewBox="0 0 12 24" fill="none" className="shrink-0">
                         <path d="M6 5L12 12H0L6 5Z" fill="#a3a3a3" />

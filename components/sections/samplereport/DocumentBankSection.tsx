@@ -14,14 +14,14 @@ const reports = [
   {
     category: 'Construction Project',
     title: 'Builder Escrow Verification – St. Ann',
-    desc: 'Complete architectural, safety, and utility structural overview for buyers.',
+    desc: 'Complete visual, safety, and utility documentation for buyers.',
     pages: '3 pages',
     type: 'Residential',
   },
   {
     category: 'Vacant Land Verification',
     title: 'Vacant Land Documentation – Trelawny',
-    desc: 'Complete architectural, safety, and utility structural overview for buyers.',
+    desc: 'Complete visual, safety, and utility documentation for buyers.',
     pages: '3 pages',
     type: 'Residential',
   },
@@ -87,7 +87,7 @@ export function DocumentBankSection() {
                           </div>
                         </div>
                         <div className="text-gray-900 text-xs font-bold mb-2">Property Verification Report</div>
-                        <div className="text-gray-500 text-[9px] mb-3">Kingston, Surrey | 4 Bed Detached</div>
+                        <div className="text-gray-500 text-[9px] mb-3">Kingston, St. Andrew | 4 Bed Detached</div>
                         <div className="space-y-1.5">
                           <div className="h-2 bg-gray-200 rounded w-full" />
                           <div className="h-2 bg-gray-200 rounded w-10/12" />

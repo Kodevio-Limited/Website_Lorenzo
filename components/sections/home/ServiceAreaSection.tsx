@@ -1,22 +1,31 @@
 "use client";
 
-import React from "react";
+import React, { useSyncExternalStore } from "react";
 import { motion } from "motion/react";
 
+function useHasMounted(): boolean {
+  return useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+}
+
 const parishPins = [
-  { name: "Hanover", x: "14%", y: "15%"},
-  { name: "Westmoreland", x: "13%", y: "33%" },
+  { name: "Hanover", x: "13%", y: "20%"},
+  { name: "Westmoreland", x: "13%", y: "37%" },
   { name: "St. James", x: "24%", y: "21%" },
-  { name: "St. Elizabeth", x: "29%", y: "60%" },
+  { name: "St. Elizabeth", x: "29%", y: "61%" },
   { name: "Trelawny", x: "35%", y: "25%" },
-  { name: "Manchester", x: "40%", y: "57%" },
+  { name: "Manchester", x: "39%", y: "63%" },
   { name: "St. Ann", x: "50%", y: "30%" },
-  { name: "Clarendon", x: "50%", y: "56%" },
-  { name: "St. Mary", x: "69%", y: "30%" },
-  { name: "St. Catherine", x: "60%", y: "56%" },
-  { name: "Kingston", x: "72%", y: "54%" },
-  { name: "Portland", x: "85%", y: "48%" },
-  { name: "St. Thomas", x: "87%", y: "69%" },
+  { name: "Clarendon", x: "50%", y: "67%" },
+  { name: "St. Mary", x: "69%", y: "35%" },
+  { name: "St. Catherine", x: "62%", y: "63%" },
+  { name: "St. Andrew", x: "72%", y: "58%" },
+  { name: "Kingston", x: "74%", y: "70%" },
+  { name: "Portland", x: "84%", y: "53%" },
+  { name: "St. Thomas", x: "87%", y: "73%" },
 ];
 
 const features = [
@@ -77,6 +86,8 @@ const features = [
 ];
 
 export function ServiceAreaSection() {
+  const hasMounted = useHasMounted();
+
   return (
     <section className="section-full bg-[#000B03]">
       <div className="section-inner py-12 lg:py-16">
@@ -84,8 +95,9 @@ export function ServiceAreaSection() {
 
         <div className="w-full flex flex-col lg:flex-row justify-between items-end gap-6 lg:gap-12">
           <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            initial={hasMounted ? { opacity: 0, y: 30, scale: 0.95 } : false}
+            animate={hasMounted ? undefined : { opacity: 1, y: 0, scale: 1 }}
+            whileInView={hasMounted ? { opacity: 1, y: 0, scale: 1 } : undefined}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="w-full lg:w-[500px] flex flex-col gap-4"
@@ -96,8 +108,9 @@ export function ServiceAreaSection() {
             </h2>
           </motion.div>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={hasMounted ? { opacity: 0, y: 20 } : false}
+            animate={hasMounted ? undefined : { opacity: 1, y: 0 }}
+            whileInView={hasMounted ? { opacity: 1, y: 0 } : undefined}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="w-full lg:w-[550px] text-neutral-400 text-lg lg:text-2xl font-normal leading-7 lg:leading-8"
@@ -112,48 +125,70 @@ export function ServiceAreaSection() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={hasMounted ? { opacity: 0, scale: 0.9 } : false}
+          animate={hasMounted ? undefined : { opacity: 1, scale: 1 }}
+          whileInView={hasMounted ? { opacity: 1, scale: 1 } : undefined}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="relative w-full max-w-[800px] lg:max-w-[1074px] mx-auto"
+          suppressHydrationWarning
         >
           <img
             src="/assets/images/map.png"
             alt="Map of Jamaica with 14 parishes"
             className="w-full h-auto object-contain"
+            suppressHydrationWarning
           />
 
           {parishPins.map((pin, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={hasMounted ? { opacity: 0, scale: 0 } : false}
+              animate={hasMounted ? undefined : { opacity: 1, scale: 1 }}
+              whileInView={hasMounted ? { opacity: 1, scale: 1 } : undefined}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.3 + idx * 0.1 }}
-              className="absolute z-10 -translate-x-1/2 -translate-y-1/2 group cursor-default"
+              className="absolute z-10 -translate-x-1/2 -translate-y-full group cursor-default"
               style={{ left: pin.x, top: pin.y }}
             >
-              <div className="relative flex items-center justify-center">
-                <div className="size-8 lg:size-11 overflow-hidden absolute">
-                  <div className="w-[26px] h-8 lg:w-9 lg:h-11 left-[4px] lg:left-[5.63px] top-[0.7px] lg:top-[0.94px] absolute bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700" />
-                </div>
-                <div className="size-[28px] lg:size-10 absolute bg-black rounded-full border-[2px] lg:border-[2.82px] border-amber-200 z-10" />
-                <svg className="w-5 h-6 lg:w-7 lg:h-8 relative z-20" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#D1A736" />
-                  <circle cx="12" cy="9" r="3" fill="black" />
+              <div className="relative flex flex-col items-center">
+                <svg
+                  className="w-7 h-9 lg:w-10 lg:h-12 drop-shadow-[0_4px_12px_rgba(209,167,54,0.45)] transition-transform duration-300 group-hover:scale-110"
+                  viewBox="0 0 32 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs>
+                    <linearGradient id={`pinGradHome-${idx}`} x1="16" y1="2" x2="16" y2="30" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#FEF3C7" />
+                      <stop offset="0.45" stopColor="#FB923C" />
+                      <stop offset="1" stopColor="#A16207" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M16 2C9.373 2 4 7.373 4 14c0 8.5 12 24 12 24s12-15.5 12-24C28 7.373 22.627 2 16 2z"
+                    fill={`url(#pinGradHome-${idx})`}
+                    stroke="#1C1917"
+                    strokeWidth="1.8"
+                    strokeLinejoin="round"
+                  />
+                  <circle cx="16" cy="14" r="5.2" fill="#000B03" stroke="#FDE68A" strokeWidth="1.6" />
+                  <circle cx="16" cy="14" r="2.2" fill="#FBBF24" />
                 </svg>
-              </div>
-              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 bg-[#000B03]/95 border border-amber-500/30 text-[10px] font-bold text-amber-400 px-2 py-0.5 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-20">
-                {pin.name}
+                <div
+                  className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-full mt-0.5 bg-[#000B03]/95 border border-amber-500/30 text-[10px] lg:text-xs font-bold text-amber-400 px-2 py-0.5 lg:py-1 rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none z-20 translate-y-0 group-hover:translate-y-1"
+                >
+                  {pin.name}
+                </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.97 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          initial={hasMounted ? { opacity: 0, y: 30, scale: 0.97 } : false}
+          animate={hasMounted ? undefined : { opacity: 1, y: 0, scale: 1 }}
+          whileInView={hasMounted ? { opacity: 1, y: 0, scale: 1 } : undefined}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="w-full flex flex-wrap justify-center gap-6 lg:gap-12 xl:gap-24 pt-6 lg:pt-8 border-t border-zinc-900/40"
@@ -161,11 +196,12 @@ export function ServiceAreaSection() {
           {features.map((f, idx) => (
             <motion.div
               key={f.title}
-              initial={{ opacity: 0, y: 30, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={hasMounted ? { opacity: 0, y: 30, scale: 0.9 } : false}
+              animate={hasMounted ? undefined : { opacity: 1, y: 0, scale: 1 }}
+              whileInView={hasMounted ? { opacity: 1, y: 0, scale: 1 } : undefined}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ type: "spring", stiffness: 60, damping: 12, delay: 0.6 + idx * 0.12 }}
-              whileHover={{ y: -8, scale: 1.05 }}
+              whileHover={hasMounted ? { y: -8, scale: 1.05 } : undefined}
               className="w-36 lg:w-48 flex flex-col items-center gap-3 lg:gap-5"
             >
               <div className="size-16 lg:size-24 flex items-center justify-center bg-gray-200/10 rounded-full outline outline-[1px] lg:outline-[1.39px] outline-offset-[-1px] lg:outline-offset-[-1.39px] outline-gray-200">

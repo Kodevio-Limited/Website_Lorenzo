@@ -75,13 +75,13 @@ export function InteractiveVerificationSection() {
                   <div className="mb-10">
                     <div className="text-gray-900 text-3xl font-bold mb-3">Property Verification Report</div>
                     <div className="text-gray-600 text-base leading-relaxed mb-2">
-                      4 Bed Detached &bull; Kingston, Surrey &bull; JULY 10, 2026
+                      4 Bed Detached &bull; Kingston, St. Andrew, Jamaica &bull; JULY 10, 2026
                     </div>
                     <div className="w-24 h-1 bg-amber-500 rounded mt-4" />
                   </div>
                   <div className="space-y-6">
                     <div>
-                      <div className="text-gray-800 text-lg font-semibold mb-3">1. Structural Overview</div>
+                      <div className="text-gray-800 text-lg font-semibold mb-3">1. Property Overview</div>
                       <div className="space-y-2">
                         <div className="h-4 bg-gray-200 rounded w-full" />
                         <div className="h-4 bg-gray-200 rounded w-11/12" />
@@ -111,9 +111,9 @@ export function InteractiveVerificationSection() {
                     <div className="space-y-1">
                       <div className="flex items-center gap-2 text-green-700">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M20 6L9 17l-5-5"/></svg>
-                        <span className="text-xs font-semibold">STRUCTURAL INTEGRITY VERIFIED</span>
+                        <span className="text-xs font-semibold">VISUAL CONDITION VERIFIED</span>
                       </div>
-                      <div className="text-gray-400 text-xs">Digitally signed by RICs-accredited engineer</div>
+                      <div className="text-gray-400 text-xs">Verified on-site by a Nexus field representative</div>
                     </div>
                     <div className="flex gap-6 text-gray-400 text-xs">
                       <span>Page 1 of 3</span>
@@ -145,7 +145,7 @@ export function InteractiveVerificationSection() {
                       <div className="text-white text-3xl font-medium leading-10">Property Verification Report – Kingston</div>
                     </div>
                     <div className="text-zinc-400 text-xl font-normal leading-7">
-                      A comprehensive structural, mechanical, cosmetic, and insulation audit designed to safeguard buyers acquiring older brick properties or estates throughout historical Kingston-upon-Thames.
+                      A comprehensive visual condition review of the exterior, interior, and surrounding grounds of a residential property in Jamaica, documented with high-resolution photos and GPS-tagged observations for buyers and owners abroad.
                     </div>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ export function InteractiveVerificationSection() {
                   <div className="flex justify-start items-center gap-28">
                     <div className="flex flex-col gap-2 whitespace-nowrap">
                       <div className="text-zinc-400 text-xs font-medium leading-5">LOCATION</div>
-                      <div className="text-white text-2xl font-normal leading-8">Kingston, Surrey</div>
+                      <div className="text-white text-2xl font-normal leading-8">Kingston, St. Andrew</div>
                     </div>
                     <div className="flex flex-col gap-2 whitespace-nowrap">
                       <div className="text-zinc-400 text-xs font-medium leading-5">DATE OF AUDIT</div>
@@ -199,7 +199,7 @@ export function InteractiveVerificationSection() {
               <div className="bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm p-8 lg:p-10">
                 <div className="text-black text-3xl font-medium leading-10 mb-6">Encrypted Sign-off</div>
                 <div className="text-stone-700 text-2xl font-medium leading-8">
-                  All formal reports are signed off dynamically by RICs-accredited structural engineers and certified business auditors.
+                  All formal reports are reviewed and signed off by trained Nexus field representatives following on-site visual verification.
                 </div>
               </div>
             </motion.div>

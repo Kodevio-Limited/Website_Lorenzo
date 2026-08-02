@@ -57,7 +57,9 @@ export function CtaBannerSection() {
               Request a Quote
             </motion.a>
             <motion.a
-              href="/contact"
+              href="https://clientdashbaordlorenzo.vercel.app/login"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-3.5 py-5 bg-zinc-100/30 rounded-sm outline outline-1 outline-offset-[-1px] outline-neutral-400 text-white text-2xl font-medium leading-8"

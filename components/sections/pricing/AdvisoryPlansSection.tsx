@@ -7,7 +7,6 @@ const plans = [
   {
     name: 'Blueprint Review – Tier 1',
     price: '$999',
-    period: '/MONTH',
     features: [
       'Blueprint, floor-plan, plumbing, kitchen, bath, and appliance layout review',
       'Vendor coordination',
@@ -18,7 +17,6 @@ const plans = [
   {
     name: 'Blueprint Review – Tier 2',
     price: '$1,995',
-    period: '/MONTH',
     features: [
       'Includes Tier 1',
       'Product recommendations',
@@ -31,7 +29,6 @@ const plans = [
   {
     name: 'Blueprint Review – Tier 3',
     price: '$2,995+',
-    period: '/MONTH',
     features: [
       'Includes Tier 2',
       'Procurement oversight',
@@ -112,8 +109,7 @@ export function AdvisoryPlansSection() {
                       <div className="self-stretch flex flex-col justify-start items-start">
                         <div className="text-neutral-50 text-6xl font-semibold leading-[83.19px]">
                           {plan.price}{' '}
-                          <span className="text-neutral-50 text-3xl font-normal leading-10">USD </span>
-                          <span className="text-zinc-400 text-3xl font-normal leading-10">{plan.period}</span>
+                          <span className="text-neutral-50 text-3xl font-normal leading-10">USD</span>
                         </div>
                       </div>
                     </div>

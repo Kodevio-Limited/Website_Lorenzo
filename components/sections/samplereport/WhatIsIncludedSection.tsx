@@ -15,7 +15,7 @@ const features = [
   },
   {
     title: "High-Quality Photos",
-    desc: "High-definition thermal, macro, and wide-angle visual evidence cataloged page-by-page.",
+    desc: "High-resolution wide-angle and detail photographs of the property, cataloged page-by-page.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-amber-200">
         <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
@@ -25,7 +25,7 @@ const features = [
   },
   {
     title: "Video Walkthroughs",
-    desc: "Secure QR links embedded directly in paper reports linking to interactive video audits.",
+    desc: "Secure QR links embedded directly in paper reports linking to interactive video walkthroughs.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-amber-200">
         <polygon points="5 3 19 12 5 21 5 3" />
@@ -34,7 +34,7 @@ const features = [
   },
   {
     title: "Condition & Analysis",
-    desc: "Comprehensive evaluation of masonry, foundations, electrical grids, and utility lines.",
+    desc: "Comprehensive visual evaluation of masonry, foundations, and utility lines.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-amber-200">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -47,7 +47,7 @@ const features = [
   },
   {
     title: "Recommendations",
-    desc: "Clear, actionable repairs prioritizations with estimated repair costs.",
+    desc: "Clear, actionable visual observations and recommended next steps.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-amber-200">
         <circle cx="12" cy="12" r="10" />

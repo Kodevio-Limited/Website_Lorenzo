@@ -73,10 +73,10 @@ export function Header() {
         visible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <div className="w-full bg-[#000B03] flex items-center justify-between h-20 md:h-24 px-6 md:px-12 lg:px-16">
+      <div className="w-full bg-[#000B03] flex items-center justify-between h-20 md:h-24 px-6 md:px-10 lg:px-12 xl:px-14">
 
         <Link href="/" className="flex items-center gap-3 md:gap-4 shrink-0">
-          <div className="size-14 md:size-24 relative shrink-0">
+          <div className="size-14 md:size-16 xl:size-20 2xl:size-24 relative shrink-0">
             <Image
               src="/assets/logo.png"
               alt="Nexus"
@@ -84,19 +84,19 @@ export function Header() {
               className="object-contain"
             />
           </div>
-          <span className="text-white font-bold text-lg md:text-3xl leading-none tracking-tight">
+          <span className="text-white font-bold text-lg md:text-2xl xl:text-3xl leading-none tracking-tight whitespace-nowrap">
             NEXUS
           </span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-8 xl:gap-12 2xl:gap-16">
-        <nav className="flex items-center gap-10 xl:gap-16 2xl:gap-24">
+        <div className="hidden xl:flex flex-1 items-center justify-center px-4">
+        <nav className="flex items-center gap-8 xl:gap-10 2xl:gap-14">
           {navLinks.map((link) => {
             if (link.hasDropdown === 'services') {
               return (
                 <div key={link.label} className="relative" ref={servicesRef}>
                   <button
-                    className="flex items-center gap-2 text-zinc-400 text-lg xl:text-xl 2xl:text-2xl font-normal leading-6 xl:leading-7 2xl:leading-8 hover:text-white transition-colors cursor-pointer"
+                    className="flex items-center gap-2 text-zinc-400 text-base xl:text-lg 2xl:text-xl font-normal leading-6 xl:leading-7 2xl:leading-8 hover:text-white transition-colors cursor-pointer whitespace-nowrap"
                     onClick={() => setDropdownOpen('services')}
                     aria-expanded={dropdownOpen === 'services'}
                   >
@@ -149,7 +149,7 @@ export function Header() {
               return (
                 <div key={link.label} className="relative" ref={legalRef}>
                   <button
-                    className="flex items-center gap-2 text-zinc-400 text-lg xl:text-xl 2xl:text-2xl font-normal leading-6 xl:leading-7 2xl:leading-8 hover:text-white transition-colors cursor-pointer"
+                    className="flex items-center gap-2 text-zinc-400 text-base xl:text-lg 2xl:text-xl font-normal leading-6 xl:leading-7 2xl:leading-8 hover:text-white transition-colors cursor-pointer whitespace-nowrap"
                     onClick={() => setDropdownOpen('legal')}
                     aria-expanded={dropdownOpen === 'legal'}
                   >
@@ -193,44 +193,46 @@ export function Header() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-zinc-400 text-lg xl:text-xl 2xl:text-2xl font-normal leading-6 xl:leading-7 2xl:leading-8 hover:text-white transition-colors"
+                className="text-zinc-400 text-base xl:text-lg 2xl:text-xl font-normal leading-6 xl:leading-7 2xl:leading-8 hover:text-white transition-colors whitespace-nowrap"
               >
                 {link.label}
               </Link>
             );
           })}
         </nav>
-
-        <Link
-          href="/contact"
-          className="px-3.5 py-5 items-center justify-center gap-2 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm text-stone-900 text-lg xl:text-2xl font-medium leading-6 xl:leading-8 hover:opacity-90 transition-all inline-flex shrink-0"
-        >
-          REQUEST SERVICE
-        </Link>
         </div>
 
-        <button
-          className="lg:hidden text-white p-2"
-          onClick={() => setMobileOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? (
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          ) : (
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          )}
-        </button>
+        <div className="flex items-center gap-3 xl:gap-4 shrink-0">
+          <Link
+            href="/contact"
+            className="hidden xl:inline-flex px-4 py-3 items-center justify-center gap-2 bg-gradient-to-b from-amber-200 via-orange-400 to-yellow-700 rounded-sm text-stone-900 text-base 2xl:text-lg font-medium leading-6 hover:opacity-90 transition-all shrink-0 whitespace-nowrap"
+          >
+            REQUEST SERVICE
+          </Link>
+
+          <button
+            className="xl:hidden text-white p-2"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            ) : (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden bg-[#000B03] border-t border-zinc-800 px-6 md:px-12 lg:px-16 py-4 space-y-1">
+        <div className="xl:hidden bg-[#000B03] border-t border-zinc-800 px-6 md:px-12 lg:px-16 py-4 space-y-1">
           {navLinks.map((link) => (
             <Link
               key={link.label}
