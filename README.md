@@ -11,8 +11,6 @@
 > **How to use this document:**  
 > This is your master delivery record covering all three frontend websites built for Nexus Property & Business Services. Each section covers one website, then one page at a time. After each page description, there is a placeholder for your screenshot. Simply insert the corresponding screenshot in Google Docs using Insert → Image.
 >
-> **Screenshot placeholder format used below:**  
-> `[ 📸 SCREENSHOT — Insert image here ]`
 
 ---
 
@@ -111,7 +109,6 @@ The Overview page is the first thing an admin sees after logging in. It renders 
 - Table columns: Report title, Parish, Property, Field Rep, Visit Date, Status, Review status
 - Responsive: cards stack on mobile, table scrolls horizontally
 
-`[ 📸 SCREENSHOT — Overview Page — Insert image here ]`
 
 ---
 
@@ -134,7 +131,6 @@ The Clients page is a full CRUD (create, read, update) interface for managing th
 - Loading skeleton shown while data is fetching (animated pulse rows)
 - Empty state message shown if no clients exist
 
-`[ 📸 SCREENSHOT — Clients Page — Insert image here ]`
 
 ---
 
@@ -156,7 +152,6 @@ The Properties page manages every property that Nexus monitors on behalf of its 
 - Skeleton loading state and empty state handled
 - `DemoTag` badge displayed
 
-`[ 📸 SCREENSHOT — Properties Page — Insert image here ]`
 
 ---
 
@@ -178,7 +173,6 @@ The Reports page is the central log of all field inspection reports submitted ac
 - Toast success/error notifications
 - `DemoTag` badge, loading skeleton, empty state
 
-`[ 📸 SCREENSHOT — Reports Page — Insert image here ]`
 
 ---
 
@@ -199,7 +193,6 @@ A dedicated workflow page for reviewing and approving or rejecting field-submitt
 - 4 sample pending approvals seeded with real Jamaican property names and field rep names from the Nexus brand context
 - Submitted dates formatted using the shared `formatDate` utility
 
-`[ 📸 SCREENSHOT — Report Approvals Page — Insert image here ]`
 
 ---
 
@@ -220,7 +213,6 @@ The Media page handles all files (images, documents, videos) attached to propert
 - Empty state with message if no media exists
 - Toast notifications on upload/update success
 
-`[ 📸 SCREENSHOT — Media Page — Insert image here ]`
 
 ---
 
@@ -238,7 +230,6 @@ An information-display page showing all active Nexus service plans with pricing,
 - Status badge uses the shared `StatusBadge` component
 - All real pricing and feature data from the Nexus service offerings
 
-`[ 📸 SCREENSHOT — Service Plans Page — Insert image here ]`
 
 ---
 
@@ -257,7 +248,6 @@ An inbox-style page showing all incoming system alerts and notifications.
 - 6 seeded demo notifications with realistic Nexus data (property names, field rep names, system events)
 - Color-coded category badges: Report (blue), Visit (amber), Client (green), System (gray)
 
-`[ 📸 SCREENSHOT — Notifications Page — Insert image here ]`
 
 ---
 
@@ -276,7 +266,6 @@ A chronological audit log of all actions taken across the portal.
 - Timestamps in `YYYY-MM-DD · H:MM AM/PM` format
 - Ready to wire up to a real audit log API endpoint
 
-`[ 📸 SCREENSHOT — Activity History Page — Insert image here ]`
 
 ---
 
@@ -296,7 +285,6 @@ The admin's personal profile settings page. Visiting `/dashboard/account` automa
 - "Save Changes" button triggers a simulated async save (500ms delay) then fires a success toast
 - Form remains populated and usable after saving
 
-`[ 📸 SCREENSHOT — Profile Page — Insert image here ]`
 
 ---
 
@@ -315,7 +303,6 @@ Password change page with full validation and confirmation matching.
 - On success: toast notification fires, form resets to empty
 - "Updating…" loading state while simulated save is in progress
 
-`[ 📸 SCREENSHOT — Security Page — Insert image here ]`
 
 ---
 
@@ -331,7 +318,6 @@ A styled, readable privacy policy page embedded within the Account section.
 - Long-form prose content formatted with clear headings and body text
 - Accessible typography hierarchy
 
-`[ 📸 SCREENSHOT — Privacy Policy Page — Insert image here ]`
 
 ---
 
@@ -346,7 +332,6 @@ Terms and Conditions page matching the same layout and navigation as the other A
 - AccountNav tabs present for in-section navigation
 - Full T&C content formatted for readability
 
-`[ 📸 SCREENSHOT — Terms & Conditions Page — Insert image here ]`
 
 ---
 
@@ -377,7 +362,6 @@ A full-screen, split-layout login page that sets the visual tone for the entire 
 - **Secure Login button** (gold gradient, pill-shaped, full-width) — clicking submits the form and redirects to `/dashboard`
 - `aria-label` attributes on all interactive elements for accessibility
 
-`[ 📸 SCREENSHOT — Login Page — Insert image here ]`
 
 ---
 
@@ -393,7 +377,6 @@ Password reset request page. Maintains the same split-layout design as the login
 - Submit button to trigger the reset flow
 - Back to login link
 
-`[ 📸 SCREENSHOT — Reset Login Page — Insert image here ]`
 
 ---
 
@@ -409,7 +392,6 @@ The page a user lands on after clicking a password-reset link from their email.
 - Confirm button
 - Consistent auth layout
 
-`[ 📸 SCREENSHOT — Set New Password Page — Insert image here ]`
 
 ---
 
@@ -433,7 +415,6 @@ The main landing page for logged-in clients. Displays all properties linked to t
   - **History** (dark) → navigates to the History page
 - Fully responsive: buttons stack on mobile
 
-`[ 📸 SCREENSHOT — My Properties Page — Insert image here ]`
 
 ---
 
@@ -454,7 +435,6 @@ A clean, client-facing list of finalized inspection reports the client can view 
 - Designed to be read-only; clients only view and download, not edit
 - Ready to wire up to actual PDF file URLs
 
-`[ 📸 SCREENSHOT — Reports Page (Client) — Insert image here ]`
 
 ---
 
@@ -478,7 +458,6 @@ A media gallery showing all inspection photos and video tours captured for the c
 - Aspect ratio locked at 4:3 for consistent grid alignment
 - Hover scale animation on the background image (`scale-102`)
 
-`[ 📸 SCREENSHOT — Photos & Videos Page — Insert image here ]`
 
 ---
 
@@ -493,7 +472,6 @@ A dedicated media view scoped to a specific property (accessed from the property
 - Same media grid layout as Photos & Videos
 - Scoped to the selected property
 
-`[ 📸 SCREENSHOT — Property Media Page — Insert image here ]`
 
 ---
 
@@ -508,7 +486,6 @@ A historical log of all past inspection visits for a specific property.
 - Table view of past visits
 - Columns: Visit date, status, field rep, notes
 
-`[ 📸 SCREENSHOT — Property History Page — Insert image here ]`
 
 ---
 
@@ -524,7 +501,6 @@ The client's personal profile settings page.
 - Zod + react-hook-form validation
 - Save Changes button with toast notification
 
-`[ 📸 SCREENSHOT — Profile Settings (Client) — Insert image here ]`
 
 ---
 
@@ -541,7 +517,6 @@ Password change form for the client portal.
 - 8-character minimum on new password
 - Toast notification on success, form resets after save
 
-`[ 📸 SCREENSHOT — Update Password (Client) — Insert image here ]`
 
 ---
 
@@ -577,7 +552,6 @@ The homepage assembles 9 distinct sections in sequence, each independently built
 
 Full Open Graph and meta description configured for SEO: *"Jamaica's #1 Property Verification"*
 
-`[ 📸 SCREENSHOT — Home Page (full scroll or above-fold) — Insert image here ]`
 
 ---
 
@@ -598,7 +572,6 @@ A deep-dive page that builds trust and tells the Nexus brand story across 8 sect
 7. **AboutMapSection** — Visual coverage map highlighting all parishes
 8. **AboutCtaSection** — Bottom CTA to get in touch or start a service
 
-`[ 📸 SCREENSHOT — About Page — Insert image here ]`
 
 ---
 
@@ -621,7 +594,6 @@ A comprehensive, transparent pricing page broken into four sections:
    - Tier 3 ($2,995+) — adds procurement oversight and ongoing consultation
 4. **OtherServicesSection** — Additional services outside the standard plan tiers
 
-`[ 📸 SCREENSHOT — Pricing Page — Insert image here ]`
 
 ---
 
@@ -636,7 +608,6 @@ An overview page introducing all Nexus service categories.
 1. **ServicesHeroSection** — Page banner with tagline and intro
 2. **ServicesGridSection** — Card grid of all available services with descriptions and icons, linking to individual service detail pages where applicable
 
-`[ 📸 SCREENSHOT — Services Page — Insert image here ]`
 
 ---
 
@@ -652,7 +623,6 @@ Dedicated landing page for the core property verification service.
 - Detailed description of what's included, how it works, and who it's for
 - CTA to book or inquire
 
-`[ 📸 SCREENSHOT — Property Verification Page — Insert image here ]`
 
 ---
 
@@ -668,7 +638,6 @@ A separate service page targeting residential property owners specifically.
 - What's included section, photo documentation breakdown, pricing reference
 - CTA buttons
 
-`[ 📸 SCREENSHOT — Residential Property Verification Page — Insert image here ]`
 
 ---
 
@@ -684,7 +653,6 @@ A full page dedicated to communicating island-wide coverage across Jamaica.
 2. **ServiceAreaMapSection** — Visual map of Jamaica highlighting all parishes
 3. **ParishesListSection** — Full list of all 14 parishes with any relevant notes
 
-`[ 📸 SCREENSHOT — Service Area Page — Insert image here ]`
 
 ---
 
@@ -701,7 +669,6 @@ A page that lets prospects preview what a Nexus inspection report looks like bef
 3. **DocumentBankSection** — A bank of downloadable or viewable sample documents
 4. **WhatIsIncludedSection** — Bullet breakdown of what every report contains
 
-`[ 📸 SCREENSHOT — Sample Reports Page — Insert image here ]`
 
 ---
 
@@ -716,7 +683,6 @@ Frequently Asked Questions page to reduce support load and answer common objecti
 1. **FaqHeroSection** — Page banner
 2. **FaqAccordionSection** — Expandable/collapsible accordion FAQ items, covering questions about the service, coverage, turnaround time, pricing, and the client portal
 
-`[ 📸 SCREENSHOT — FAQ Page — Insert image here ]`
 
 ---
 
@@ -731,7 +697,6 @@ A dedicated contact page for service inquiries and direct outreach.
 1. **ContactHeroSection** — Page header with tagline and contact details (phone, email, location)
 2. **ContactPageSection** — Full contact form with fields: Name, Email, Phone, Property Location / Parish, Service Interest, Message. Submit button with form validation.
 
-`[ 📸 SCREENSHOT — Contact Page — Insert image here ]`
 
 ---
 
@@ -746,7 +711,6 @@ A cleanly formatted legal privacy policy page.
 - Full prose content with proper heading hierarchy
 - Consistent header/footer layout matching the rest of the marketing site
 
-`[ 📸 SCREENSHOT — Privacy Policy (Marketing) — Insert image here ]`
 
 ---
 
@@ -761,7 +725,6 @@ Terms and Conditions page matching the privacy policy layout.
 - Full legal content
 - Consistent marketing site header and footer
 
-`[ 📸 SCREENSHOT — Terms & Conditions (Marketing) — Insert image here ]`
 
 ---
 
