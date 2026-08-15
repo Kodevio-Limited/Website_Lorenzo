@@ -2,12 +2,15 @@
 
 import { motion } from "motion/react";
 import Link from 'next/link';
+import { useServicePlans } from '@/hooks/use-service-plans';
 
-const plans = [
+const DEFAULT_PLANS = [
   {
+    id: 1,
     name: 'Exterior Care Verification Plan',
     price: '$399',
-    period: 'USD /MONTH',
+    currency: 'USD',
+    period: '/MONTH',
     features: [
       'Exterior-only property verification',
       'One scheduled visit per month',
@@ -19,9 +22,11 @@ const plans = [
     highlight: false,
   },
   {
+    id: 2,
     name: 'Property Care Plan',
     price: '$699',
-    period: 'USD /MONTH',
+    currency: 'USD',
+    period: '/MONTH',
     features: [
       'Interior and exterior property verification',
       'One scheduled visit per month',
@@ -33,9 +38,11 @@ const plans = [
     highlight: true,
   },
   {
+    id: 3,
     name: 'Property Steward Plan',
     price: '$999',
-    period: 'USD /MONTH',
+    currency: 'USD',
+    period: '/MONTH',
     features: [
       'Premium protection plan',
       'Two visits per month',
@@ -62,6 +69,22 @@ function CheckIcon({ gradient }: { gradient?: boolean }) {
 }
 
 export function PricingPreviewSection() {
+  const { data: apiPlans } = useServicePlans();
+
+  const plans = apiPlans && apiPlans.length > 0
+    ? [...apiPlans]
+        .sort((a, b) => a.price - b.price)
+        .slice(0, 3)
+        .map((plan, idx) => ({
+          id: plan.id,
+          name: plan.name,
+          price: `$${plan.price}`,
+          currency: plan.currency || 'USD',
+          period: `/${plan.billingType === 'MONTHLY' ? 'MONTH' : plan.billingType}`,
+          features: Array.isArray(plan.features) ? plan.features : [],
+          highlight: idx === 1,
+        }))
+    : DEFAULT_PLANS;
   return (
     <section className="section-full bg-[#000B03]">
       <div className="section-inner py-16 lg:py-20">

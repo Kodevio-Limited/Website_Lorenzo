@@ -2,11 +2,14 @@
 
 import { motion } from "motion/react";
 import Link from 'next/link';
+import { useServicePlans } from '@/hooks/use-service-plans';
 
-const plans = [
+const DEFAULT_PLANS = [
   {
+    id: 1,
     name: 'Exterior Care Verification Plan',
     price: '$399',
+    currency: 'USD',
     period: '/MONTH',
     features: [
       'Exterior-only property verification',
@@ -19,8 +22,10 @@ const plans = [
     highlight: false,
   },
   {
+    id: 2,
     name: 'Property Care Plan',
     price: '$699',
+    currency: 'USD',
     period: '/MONTH',
     features: [
       'Interior and exterior property verification',
@@ -33,8 +38,10 @@ const plans = [
     highlight: true,
   },
   {
+    id: 3,
     name: 'Property Steward Plan',
     price: '$999',
+    currency: 'USD',
     period: '/MONTH',
     features: [
       'Premium protection plan',
@@ -73,6 +80,22 @@ function WhiteCheckIcon() {
 }
 
 export function PropertyVerificationPlansSection() {
+  const { data: apiPlans, isLoading } = useServicePlans();
+
+  const plans = apiPlans && apiPlans.length > 0
+    ? [...apiPlans]
+        .sort((a, b) => a.price - b.price)
+        .slice(0, 3)
+        .map((plan, idx) => ({
+          id: plan.id,
+          name: plan.name,
+          price: `$${plan.price}`,
+          currency: plan.currency || 'USD',
+          period: `/${plan.billingType === 'MONTHLY' ? 'MONTH' : plan.billingType}`,
+          features: Array.isArray(plan.features) ? plan.features : [],
+          highlight: idx === 1,
+        }))
+    : DEFAULT_PLANS;
   return (
     <section className="w-full bg-[#000B03]">
       <div className="section-inner py-10">
