@@ -84,6 +84,7 @@ export function PropertyVerificationPlansSection() {
 
   const plans = apiPlans && apiPlans.length > 0
     ? [...apiPlans]
+        .filter((plan) => !plan.status || plan.status === 'ACTIVE')
         .sort((a, b) => a.price - b.price)
         .slice(0, 3)
         .map((plan, idx) => ({
